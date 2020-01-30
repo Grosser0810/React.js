@@ -2,6 +2,8 @@ import React from 'react';
 
 import Task from './components/Task/Task'
 import AddTask from "./components/ AddTask/AddTask";
+import DateFilter from "./components/DateFilter/DateFilter";
+//import Sort from "./components/Sort/Sort";
 
 class App extends React.Component{
     constructor() {
@@ -13,17 +15,32 @@ class App extends React.Component{
 
     }
 
-    addTask = task => {
+    addTask = (task, dateTask) => {
         this.setState(state => {
             let {tasks} = state;
             tasks.push({
                 id: tasks.length !== 0 ? tasks.length + 1 : 1,
                 title: task,
-                date: new Date(),
+                date: dateTask,
                 done: false,
             });
             localStorage.setItem('allTasks', JSON.stringify(this.state.tasks));
             return tasks;
+
+        });
+    };
+
+    dateFilter = (inputFilterData) => {
+        this.setState(state => {
+            let {tasks} = state;
+            console.log(tasks);
+            let filterArr = tasks.filter((index) => {
+                let date = index.date;
+                let filterDate = date.split('T')[0];
+                return filterDate === inputFilterData;
+            });
+            console.log(filterArr);
+            return filterArr;
         });
     };
 
@@ -47,6 +64,19 @@ class App extends React.Component{
             return tasks;
         })
     };
+    sortAZ = () => {
+        this.state.tasks.sort(function(a, b){
+            let nameA=a.title, nameB=b.title;
+            if (nameA < nameB) //сортируем строки по возрастанию
+                return -1
+        });
+        this.setState(state => {
+            let {tasks} = state;
+            localStorage.setItem('allTasks', JSON.stringify(this.state.tasks));
+            return tasks;
+        })
+
+    };
 
     render() {
         const {tasks} = this.state;
@@ -56,6 +86,9 @@ class App extends React.Component{
             <div className="App">
                 <div className="container">
                     <AddTask addTask={this.addTask}/>
+                    <DateFilter dateFilter={this.dateFilter}/>
+
+
                     <ul className='list-group'>
                         {[...activeTasks, ...doneTasks].map(task => (
                             <Task
