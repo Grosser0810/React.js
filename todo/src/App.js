@@ -29,21 +29,6 @@ class App extends React.Component{
         });
     };
 
-    dateFilter = (inputFilterData, tasks) => {
-        this.setState(state => {
-            let {tasks} = state;
-            if(inputFilterData !== ''){
-                return tasks.filter((index) => {
-                    let date = index.date;
-                    let filterDate = date.split('T')[0];
-                    return filterDate === inputFilterData;
-                });
-            }else {
-                return tasks;
-            }
-        });
-    };
-
 // переводим такс в состояние выполненого
     doneTask = id => {
         const index = this.state.tasks.map(task => task.id).indexOf(id);
@@ -101,17 +86,39 @@ class App extends React.Component{
                     let dateA = new Date(a.date), dateB = new Date(b.date);
                     return dateA-dateB
                 });
-
                 return renderTasks;
             }
         )
     };
 
+    // фильтр рабоет не отправляет
+    dateFilter = (inputFilterData) => {
+            let dateRenderTasks = [];
+            let {tasks} = this.state;
+
+            if (inputFilterData !== 0) {
+                dateRenderTasks = tasks.filter(index => {
+                    let date = index.date;
+                    let filterDate = date.split('T')[0];
+                    return filterDate === inputFilterData;
+                });
+            }
+            console.log(dateRenderTasks);
+            return dateRenderTasks;
+
+    };
+
+
     render() {
+
         const {tasks} = this.state;
+        const {dateFilterTasks} = this.dateFilter();
+        console.log(dateFilterTasks);
         const activeTasks = tasks.filter(task => !task.done);
         const doneTasks = tasks.filter(task => task.done);
-        const fullTasks = [...activeTasks, ...doneTasks];
+
+        const fullTasks = dateFilterTasks || [...activeTasks, ...doneTasks];
+        //const fullTasks = (dateFilterTasks.length !== 0) ? dateFilterTasks : [...activeTasks, ...doneTasks];
 
         return(
             <div className="App">
@@ -123,8 +130,8 @@ class App extends React.Component{
                         <button onClick={this.sortDate} type='button' className='btn btn-primary'>Сротировать по дате</button>
                     </div>
                     <DateFilter
+                        dateFilterTasks={dateFilterTasks}
                         dateFilter={this.dateFilter}
-                        tasks={tasks}
                     />
 
                     <ul className='list-group'>

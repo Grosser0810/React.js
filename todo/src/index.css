@@ -15,3 +15,8 @@ code {
 .action-btn {
   float: right;
 }
+.titleAdd {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
