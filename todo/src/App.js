@@ -94,6 +94,19 @@ class App extends React.Component{
         )
     };
 
+    sortDate = () => {
+        this.setState(state => {
+                let {tasks} = state;
+                let renderTasks = tasks.sort((a, b) => {
+                    let dateA = new Date(a.date), dateB = new Date(b.date);
+                    return dateA-dateB
+                });
+
+                return renderTasks;
+            }
+        )
+    };
+
     render() {
         const {tasks} = this.state;
         const activeTasks = tasks.filter(task => !task.done);
@@ -107,6 +120,7 @@ class App extends React.Component{
                     <div>
                         <button onClick={this.sortAZ} type='button' className='btn btn-primary'>A-z</button>
                         <button onClick={this.sortZA} type='button' className='btn btn-primary'>Z-a</button>
+                        <button onClick={this.sortDate} type='button' className='btn btn-primary'>Сротировать по дате</button>
                     </div>
                     <DateFilter
                         dateFilter={this.dateFilter}

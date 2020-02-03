@@ -17,7 +17,6 @@ class AddTask extends React.Component {
             this.props.addTask(input, inputDate);
             this.setState({input: '',inputDate: ''})
         }
-
     };
 
     inputChange = (event)=> {
@@ -36,7 +35,6 @@ class AddTask extends React.Component {
             <form className='form-inline mb-4 was-validate'>
                     <input onChange={this.inputChange} value={input} className='form-control' type="text"/>
                 <div className="col-10">
-
                     <input onChange={this.inputChangeDate} value={inputDate} className="form-control" type="date" id="example-date-input"/>
                 </div>
                 <div>
