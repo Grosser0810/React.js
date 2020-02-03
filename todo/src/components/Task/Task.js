@@ -4,6 +4,9 @@ import './Task.css';
 
 
 const Task = ({task, ...props}) => {
+
+
+
     const ActionButton = () =><span className='action-btn'>
         {
             task.done ?

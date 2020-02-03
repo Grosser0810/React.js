@@ -12,7 +12,6 @@ class App extends React.Component{
         this.state = {
             tasks: JSON.parse(localStorage.getItem('allTasks')) || []
         }
-
     }
 
     addTask = (task, dateTask) => {
@@ -30,17 +29,18 @@ class App extends React.Component{
         });
     };
 
-    dateFilter = (inputFilterData) => {
+    dateFilter = (inputFilterData, tasks) => {
         this.setState(state => {
             let {tasks} = state;
-            console.log(tasks);
-            let filterArr = tasks.filter((index) => {
-                let date = index.date;
-                let filterDate = date.split('T')[0];
-                return filterDate === inputFilterData;
-            });
-            console.log(filterArr);
-            return filterArr;
+            if(inputFilterData !== ''){
+                return tasks.filter((index) => {
+                    let date = index.date;
+                    let filterDate = date.split('T')[0];
+                    return filterDate === inputFilterData;
+                });
+            }else {
+                return tasks;
+            }
         });
     };
 
@@ -64,37 +64,64 @@ class App extends React.Component{
             return tasks;
         })
     };
-    sortAZ = () => {
-        this.state.tasks.sort(function(a, b){
-            let nameA=a.title, nameB=b.title;
-            if (nameA < nameB) //сортируем строки по возрастанию
-                return -1
-        });
-        this.setState(state => {
-            let {tasks} = state;
-            localStorage.setItem('allTasks', JSON.stringify(this.state.tasks));
-            return tasks;
-        })
 
+    sortAZ = () => {
+        this.setState(state => {
+                let {tasks} = state;
+                let renderTasks = tasks.sort((a, b) => {
+                    let taskA = a.title, taskB = b.title;
+                    if (taskA < taskB)
+                        return -1;
+                    if (taskA > taskB)
+                    return 1;
+                });
+                return renderTasks;
+            }
+        )};
+
+    sortZA = () => {
+        this.setState(state => {
+                let {tasks} = state;
+                let renderTasks = tasks.sort((a, b) => {
+                    let taskA = a.title, taskB = b.title;
+                    if (taskA > taskB)
+                        return -1
+                    if(taskA < taskB)
+                        return 1
+                });
+                return renderTasks;
+            }
+        )
     };
 
     render() {
         const {tasks} = this.state;
         const activeTasks = tasks.filter(task => !task.done);
         const doneTasks = tasks.filter(task => task.done);
+        const fullTasks = [...activeTasks, ...doneTasks];
+
         return(
             <div className="App">
                 <div className="container">
                     <AddTask addTask={this.addTask}/>
-                    <DateFilter dateFilter={this.dateFilter}/>
-
+                    <div>
+                        <button onClick={this.sortAZ} type='button' className='btn btn-primary'>A-z</button>
+                        <button onClick={this.sortZA} type='button' className='btn btn-primary'>Z-a</button>
+                    </div>
+                    <DateFilter
+                        dateFilter={this.dateFilter}
+                        tasks={tasks}
+                    />
 
                     <ul className='list-group'>
-                        {[...activeTasks, ...doneTasks].map(task => (
+                        {fullTasks.map(task => (
+
                             <Task
                                 doneTask={() => this.doneTask(task.id)}
                                 deleteTask={() => this.deleteTask(task.id)}
+                                dateFilter={() =>this.dateFilter()}
                                 task={task}
+                                tasks ={tasks}
                                 key={task.id}
                             />
                         ))}

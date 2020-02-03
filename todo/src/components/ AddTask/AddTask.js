@@ -17,9 +17,6 @@ class AddTask extends React.Component {
             this.props.addTask(input, inputDate);
             this.setState({input: '',inputDate: ''})
         }
-        else if(!input){
-            alert("необходимо заполнить поля")
-        }
 
     };
 
@@ -33,10 +30,13 @@ class AddTask extends React.Component {
     render() {
         const {input} = this.state;
         const {inputDate} = this.state;
+
+
         return(
-            <form className='form-inline mb-4'>
+            <form className='form-inline mb-4 was-validate'>
                     <input onChange={this.inputChange} value={input} className='form-control' type="text"/>
                 <div className="col-10">
+
                     <input onChange={this.inputChangeDate} value={inputDate} className="form-control" type="date" id="example-date-input"/>
                 </div>
                 <div>

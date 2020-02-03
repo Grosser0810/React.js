@@ -9,18 +9,20 @@ class DateFilter extends React.Component {
         }
     }
 
-    dateFilter = () => {
+    dateFilter = ({tasks, ...props}) => {
         const {inputFilterDate} = this.state;
 
         if (inputFilterDate) {
             this.props.dateFilter(inputFilterDate);
-            this.setState({inputFilterDate: ''})
+            this.setState({inputFilterDate: ''});
+            console.log(tasks)
         }
     };
 
     inputChange = (event)=> {
         this.setState({inputFilterDate: event.target.value})
     };
+
 
 
     render() {
@@ -35,6 +37,7 @@ class DateFilter extends React.Component {
                     </div>
                 </div>
                 <button onClick={this.dateFilter} type='button' className='btn btn-primary'>Показать</button>
+
             </div>
 
         )
