@@ -1,0 +1,27 @@
+.addTask {
+    text-align: center;
+}
+.addTask input {
+    width: 300px;
+    height: 25px;
+    margin-top: 10px;
+}
+.btnAdd {
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 300px;
+    border:none;
+    background: black;
+    color: white;
+}
+.btnAdd:hover {
+    cursor: pointer;
+}
+.btnAdd:active {
+    color: black;
+    background: white;
+}
+.invalidFeedback {
+    display: none;
+}

@@ -1,5 +1,7 @@
 import React from "react";
 
+import './DateFilter.css'
+
 class DateFilter extends React.Component {
     constructor(props) {
         super(props);
@@ -11,33 +13,33 @@ class DateFilter extends React.Component {
 
     dateFilter = () => {
         const {inputFilterDate} = this.state;
-
         if (inputFilterDate) {
             this.props.dateFilter(inputFilterDate);
             this.setState({inputFilterDate: ''});
-
         }
     };
 
-    inputChange = (event)=> {
-        this.setState({inputFilterDate: event.target.value})
+    inputChange = (event) => {
+        this.setState({inputFilterDate: event.target.value});
+        this.props.onDateChange(event.target.value)
     };
 
     render() {
         const {inputFilterDate} = this.state;
 
         return (
-            <div>
-                <div className="form-group row">
-                    <label htmlFor="example-date-input" className="col-2 col-form-label">Date</label>
+            <div className='filterBlock'>
+                <div className="">
+                    <div>
+                        <input type="text" className='searchInput'/>
+                    </div>
                     <div className="col-10">
-                        <input onChange={this.inputChange} value={inputFilterDate}  className="form-control" type="date" id="example-date-input"/>
+                        <input onChange={this.inputChange} value={inputFilterDate} className="form-control" type="date"
+                               id="example-date-input"/>
                     </div>
                 </div>
-                <button onClick={this.dateFilter} type='button' className='btn btn-primary'>Показать</button>
-
+                {/*<button onClick={this.dateFilter} type='submit' className='btn btn-primary'>Показать</button>*/}
             </div>
-
         )
     }
 }

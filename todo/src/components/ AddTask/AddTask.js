@@ -1,5 +1,7 @@
 import React from "react";
 
+import './AddTask.css';
+
 class AddTask extends React.Component {
     constructor(props) {
         super(props);
@@ -13,7 +15,22 @@ class AddTask extends React.Component {
     addTask = () => {
         const {input} = this.state;
         const {inputDate} = this.state;
-        if (input && inputDate) {
+        let inputText = document.querySelector('input.inputText');
+        let inputDateTask = document.querySelector('input.inputDate');
+
+
+        if (!input && !inputDate) {
+            inputText.style.border ='1px solid red';
+            inputDateTask.style.border ='1px solid red';
+        } else if(!input && inputDate) {
+            inputDateTask.style.border ='1px solid grey';
+            inputText.style.border ='1px solid red';
+        } else if(input && !inputDate) {
+            inputText.style.border ='1px solid grey';
+            inputDateTask.style.border ='1px solid red';
+        }else{
+            inputText.style.border ='1px solid grey';
+            inputDateTask.style.border ='1px solid grey';
             this.props.addTask(input, inputDate);
             this.setState({input: '', inputDate: ''})
         }
@@ -32,24 +49,18 @@ class AddTask extends React.Component {
 
 
         return (
-            <div>
+            <div className='addTask'>
                 <div className='titleAdd'>Добавить задачу</div>
-                <form className='form-inline mb-4 was-validated' noValidate>
+                <form className=''>
                     <div>
-                        <input onChange={this.inputChange} value={input} className='form-control' type="text" required/>
-                        <div className="invalid-feedback">
-                            Введите задачу
-                        </div>
+                        <input onChange={this.inputChange} value={input} className='inputText' type="text" />
                     </div>
                     <div className="">
-                        <input onChange={this.inputChangeDate} value={inputDate} className="form-control" type="date"
-                               id="example-date-input" required/>
-                        <div className="invalid-feedback">
-                            Введите дату
-                        </div>
+                        <input onChange={this.inputChangeDate} value={inputDate} className="inputDate" type="date"
+                               id="example-date-input" />
                     </div>
                     <div>
-                        <button onClick={this.addTask} type='button' className='btn btn-primary'>Добавить</button>
+                        <button onClick={this.addTask} type='button' className='btnAdd'>Добавить</button>
                     </div>
                 </form>
             </div>

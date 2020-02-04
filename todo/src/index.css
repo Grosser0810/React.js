@@ -11,7 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.container {
+  margin: 0 auto;
+}
 .action-btn {
   float: right;
 }
@@ -19,4 +21,19 @@ code {
   text-align: center;
   font-size: 20px;
   margin-bottom: 10px;
+}
+.SortBlock {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  padding-top: 30px;
+}
+.SortBlock button:hover {
+  cursor: pointer;
+
+}
+.SortBlock button {
+  border: 1px solid black;
+  padding: 10px 20px;
 }
