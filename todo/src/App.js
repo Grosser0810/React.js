@@ -28,13 +28,13 @@ class App extends React.Component {
         this.setState(state => {
             let {tasks} = state;
             tasks.push({
-                id: this.getTaskId(),
+                id: tasks.length !== 0 ? this.getTaskId() : 1,
                 title: task,
                 date: dateTask,
                 done: false,
             });
             localStorage.setItem('allTasks', JSON.stringify(this.state.tasks));
-            console.log(tasks);
+
             return tasks;
         });
 
@@ -102,8 +102,22 @@ class App extends React.Component {
         )
     };
 
-    tasksFilter = () => {
+    sortOF = () => {
+        this.setState(state => {
+                let {tasks} = state;
+                let renderTasks = tasks.sort((a, b) => {
+                    let taskA = a.id, taskB = b.id;
+                    if (taskA > taskB)
+                        return 1;
+                    if (taskA < taskB)
+                        return -1;
+                });
+                return renderTasks;
+            }
+        )
+    };
 
+    tasksFilter = () => {
         let dateRenderTasks = [];
         let {tasks} = this.state;
 
@@ -149,7 +163,6 @@ class App extends React.Component {
     };
 
     render() {
-
         const {tasks} = this.state;
         const fullTasks = this.tasksFilter();
 
@@ -160,9 +173,12 @@ class App extends React.Component {
                     <div className='SortBlock'>
                         <button onClick={this.sortAZ} type='button' className='btn btn-primary'>A-z</button>
                         <button onClick={this.sortZA} type='button' className='btn btn-primary'>Z-a</button>
-                        <button onClick={this.sortDate} type='button' className='btn btn-primary'>Сортировать по дате
-                        </button>
+                        <button onClick={this.sortDate} type='button' className='btn btn-primary'>Сортировать по дате</button>
                     </div>
+                    <div className='sortOF'>
+                        <button onClick={this.sortOF} type='button' className='btn'>сбросить сортировку</button>
+                    </div>
+
 
                     <TasksFilter
                         onTaskChange ={this.onTaskChange}

@@ -20,17 +20,17 @@ class AddTask extends React.Component {
 
 
         if (!input && !inputDate) {
-            inputText.style.border ='1px solid red';
-            inputDateTask.style.border ='1px solid red';
+            inputText.style.border ='1px solid #ff7043';
+            inputDateTask.style.border ='1px solid #ff7043';
         } else if(!input && inputDate) {
-            inputDateTask.style.border ='1px solid grey';
-            inputText.style.border ='1px solid red';
+            inputDateTask.style.border ='1px solid #e0e0e0';
+            inputText.style.border ='1px solid #ff7043';
         } else if(input && !inputDate) {
-            inputText.style.border ='1px solid grey';
-            inputDateTask.style.border ='1px solid red';
+            inputText.style.border ='1px solid #e0e0e0';
+            inputDateTask.style.border ='1px solid #ff7043';
         }else{
-            inputText.style.border ='1px solid grey';
-            inputDateTask.style.border ='1px solid grey';
+            inputText.style.border ='1px solid #e0e0e0';
+            inputDateTask.style.border ='1px solid #e0e0e0';
             this.props.addTask(input, inputDate);
             this.setState({input: '', inputDate: ''})
         }

@@ -1,26 +1,39 @@
 .addTask {
+    margin: 10px auto;
+    padding: 40px 0;
+    width: 50%;
     text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, .2);
 }
 .addTask input {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    outline: none;
     width: 300px;
     height: 25px;
     margin-top: 10px;
+    padding: 5px 15px;
 }
 .btnAdd {
+    outline: none;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2);
     text-transform: uppercase;
-    margin-top: 10px;
-    padding: 10px 20px;
-    width: 300px;
-    border:none;
-    background: black;
-    color: white;
+    margin-top: 20px;
+    width: 332px;
+    padding: 10px 0;
+    color: whitesmoke;
+    background: #1e88e5;
+    border-radius: 5px;
+    border: none;
 }
 .btnAdd:hover {
+    background: #2196f3;
     cursor: pointer;
 }
 .btnAdd:active {
-    color: black;
-    background: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset;
 }
 .invalidFeedback {
     display: none;

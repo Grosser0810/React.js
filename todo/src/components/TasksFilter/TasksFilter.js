@@ -45,7 +45,7 @@ class TasksFilter extends React.Component {
             <div className='filterBlock'>
                 <div className="">
                     <div>
-                        <input onChange={this.inputTaskChange} type="text" className='searchInput' value={inputTask} />
+                        <input onChange={this.inputTaskChange} placeholder='Search....' type="text" className='searchInput' value={inputTask} />
                     </div>
                     <div className="col-10">
                         <input onChange={this.inputChange} value={inputFilterDate} className="form-control" type="date"

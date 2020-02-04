@@ -11,6 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+* {
+  transition: all 0.2s ease;
+  color: #424242;
+  font-size: 16px;
+}
 .container {
   margin: 0 auto;
 }
@@ -22,22 +27,52 @@ code {
   font-size: 20px;
   margin-bottom: 10px;
 }
+
 .SortBlock {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 330px;
   padding-top: 30px;
 }
 .SortBlock button:hover {
   cursor: pointer;
-
+  background: #2196f3;
+}
+.SortBlock button:active {
+  box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset;
 }
 .SortBlock button {
-  border: 1px solid black;
-  padding: 10px 20px;
+  outline: none;
+  color: whitesmoke;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: #1e88e5;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2);
 }
-
+.sortOF {
+  text-align: center;
+  margin: 0 auto;
+}
+.sortOF button {
+  margin-top: 10px;
+  color: whitesmoke;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  background: #607d8b;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2);
+  width: 330px;
+}
+.sortOF button:hover {
+  cursor: pointer;
+  background: #78909c;
+}
+.sortOF button:active {
+  box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset;
+}
 .emptyList {
   text-align: center;
 }
