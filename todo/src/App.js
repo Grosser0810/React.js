@@ -175,7 +175,6 @@ class App extends React.Component {
                                 <Task
                                     doneTask={() => this.doneTask(task.id)}
                                     deleteTask={() => this.deleteTask(task.id)}
-                                    dateFilter={() => this.tasksFilter(tasks)}
                                     task={task}
                                     tasks={tasks}
                                     key={task.id}
