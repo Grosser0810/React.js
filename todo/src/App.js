@@ -95,20 +95,41 @@ class App extends React.Component {
         )
     };
 
-    //фильтр рабоет не отправляет
+    //фильтр
     dateFilter = () => {
         //debugger
         let dateRenderTasks = [];
         let {tasks} = this.state;
 
-        if (this.state.inputDate !== 0) {
+        if (this.state.inputDate === '' && this.state.inputText === ''){
+            dateRenderTasks = this.state.tasks;
+
+        }
+
+        if (this.state.inputText !== ''){
+            dateRenderTasks = tasks.filter(index => {
+                let name = index.title;
+                let inputValue = this.state.inputText;
+                return name.indexOf(inputValue) !== -1;
+            })
+        }
+
+        if (this.state.inputDate !== '') {
             dateRenderTasks = tasks.filter(index => {
                 let date = index.date;
                 let filterDate = date.split('T')[0];
                 return filterDate === this.state.inputDate;
             });
+            if (this.state.inputText) {
+                dateRenderTasks = dateRenderTasks.filter(index => {
+                    let name = index.title;
+                    let inputValue = this.state.inputText;
+                    return name.indexOf(inputValue) !== -1;
+                })
+            }
         }
-        //console.log(dateRenderTasks);
+
+
         return dateRenderTasks;
     };
 
@@ -118,24 +139,24 @@ class App extends React.Component {
         })
     };
     onTextChange = (inputText) => {
-        this.state({
+        this.setState({
             inputText
         })
     };
 
-
     render() {
 
         const {tasks} = this.state;
-        const arr = this.dateFilter();
+        const fullTasks = this.dateFilter();
         const activeTasks = tasks.filter(task => !task.done);
         const doneTasks = tasks.filter(task => task.done);
-        let fullTasks;
-        if (arr.length !== 0) {
-            fullTasks = arr;
-        } else {
-            fullTasks = [...activeTasks, ...doneTasks];
-        }
+        // let fullTasks;
+        // if (arr.length !== 0) {
+        //     fullTasks = arr;
+        // } else {
+        //     fullTasks = [...activeTasks, ...doneTasks];
+        // }
+
         //const fullTasks = (dateFilterTasks.length !== 0) ? dateFilterTasks : [...activeTasks, ...doneTasks];
 
         return (
@@ -149,14 +170,13 @@ class App extends React.Component {
                         </button>
                     </div>
 
-
                     <DateFilter
                         onTextChange ={this.onTextChange}
                         onDateChange={this.onDateChange}
                     />
 
                     <ul className='listGroup'>
-                        {
+                        { (fullTasks.length !==0) ?
                             fullTasks.map(task => (
                                 <Task
                                     doneTask={() => this.doneTask(task.id)}
@@ -166,7 +186,7 @@ class App extends React.Component {
                                     tasks={tasks}
                                     key={task.id}
                                 />
-                            ))}
+                            )) : <div>список пуст</div>}
                     </ul>
                 </div>
             </div>
