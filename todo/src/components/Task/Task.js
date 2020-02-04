@@ -12,12 +12,12 @@ const Task = ({task, ...props}) => {
                 <button
                     onClick={props.deleteTask}
                     type="button"
-                    className="btn">Удалить</button> :
+                    className="btnDelete">Удалить</button> :
 
                 <button
                     onClick={props.doneTask}
                     type="button"
-                    className="btn">Выполнить</button>
+                    className="btnDone">Выполнить</button>
         }
                             </span>;
 

@@ -13,3 +13,22 @@
 .task span {
     width: 200px;
 }
+
+.btnDone {
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    background: green;
+    border-radius: 5px;
+}
+.btnDelete {
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: orangered;
+}
+.btnDone,
+.btnDelete:hover {
+    cursor: pointer;
+}
