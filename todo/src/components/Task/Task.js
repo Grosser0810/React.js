@@ -6,18 +6,18 @@ import './Task.css';
 const Task = ({task, ...props}) => {
 
 
-    const ActionButton = () => <span className='action-btn'>
+    const ActionButton = () => <span className='actionBtn'>
         {
             task.done ?
                 <button
                     onClick={props.deleteTask}
                     type="button"
-                    className="btn btn-danger">Удалить</button> :
+                    className="btn">Удалить</button> :
 
                 <button
                     onClick={props.doneTask}
                     type="button"
-                    className="btn btn-success">Выполнить</button>
+                    className="btn">Выполнить</button>
         }
                             </span>;
 

@@ -2,37 +2,44 @@ import React from 'react';
 
 import Task from './components/Task/Task'
 import AddTask from "./components/ AddTask/AddTask";
-import DateFilter from "./components/DateFilter/DateFilter";
-
-//import Sort from "./components/Sort/Sort";
+import TasksFilter from "./components/TasksFilter/TasksFilter";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
             tasks: JSON.parse(localStorage.getItem('allTasks')) || [],
             inputDate: '',
-            inputText: '',
+            inputTask: '',
         }
     }
+
+    getTaskId = () => {
+        let tasks = this.state.tasks;
+        let arrId = [];
+        for (let i = 0; i < tasks.length; i++) {
+            arrId.push(tasks[i].id)
+        }
+        return Math.max.apply(null, arrId) + 1;
+    };
 
     addTask = (task, dateTask) => {
         this.setState(state => {
             let {tasks} = state;
             tasks.push({
-                id: tasks.length !== 0 ? tasks.length + 1 : 1,
+                id: this.getTaskId(),
                 title: task,
                 date: dateTask,
                 done: false,
             });
             localStorage.setItem('allTasks', JSON.stringify(this.state.tasks));
+            console.log(tasks);
             return tasks;
         });
+
     };
 
-// переводим такс в состояние выполненого
     doneTask = id => {
         const index = this.state.tasks.map(task => task.id).indexOf(id);
         this.setState(state => {
@@ -42,7 +49,7 @@ class App extends React.Component {
             return tasks;
         })
     };
-// удаляем таск из массива
+
     deleteTask = id => {
         const index = this.state.tasks.map(task => task.id).indexOf(id);
         this.setState(state => {
@@ -95,21 +102,19 @@ class App extends React.Component {
         )
     };
 
-    //фильтр
-    dateFilter = () => {
-        //debugger
+    tasksFilter = () => {
+
         let dateRenderTasks = [];
         let {tasks} = this.state;
 
-        if (this.state.inputDate === '' && this.state.inputText === ''){
+        if (this.state.inputDate === '' && this.state.inputTask === ''){
             dateRenderTasks = this.state.tasks;
-
         }
 
-        if (this.state.inputText !== ''){
+        if (this.state.inputTask !== ''){
             dateRenderTasks = tasks.filter(index => {
                 let name = index.title;
-                let inputValue = this.state.inputText;
+                let inputValue = this.state.inputTask;
                 return name.indexOf(inputValue) !== -1;
             })
         }
@@ -120,15 +125,14 @@ class App extends React.Component {
                 let filterDate = date.split('T')[0];
                 return filterDate === this.state.inputDate;
             });
-            if (this.state.inputText) {
+            if (this.state.inputTask) {
                 dateRenderTasks = dateRenderTasks.filter(index => {
                     let name = index.title;
-                    let inputValue = this.state.inputText;
+                    let inputValue = this.state.inputTask;
                     return name.indexOf(inputValue) !== -1;
                 })
             }
         }
-
 
         return dateRenderTasks;
     };
@@ -138,26 +142,16 @@ class App extends React.Component {
             inputDate
         })
     };
-    onTextChange = (inputText) => {
+    onTaskChange = (inputTask) => {
         this.setState({
-            inputText
+            inputTask
         })
     };
 
     render() {
 
         const {tasks} = this.state;
-        const fullTasks = this.dateFilter();
-        const activeTasks = tasks.filter(task => !task.done);
-        const doneTasks = tasks.filter(task => task.done);
-        // let fullTasks;
-        // if (arr.length !== 0) {
-        //     fullTasks = arr;
-        // } else {
-        //     fullTasks = [...activeTasks, ...doneTasks];
-        // }
-
-        //const fullTasks = (dateFilterTasks.length !== 0) ? dateFilterTasks : [...activeTasks, ...doneTasks];
+        const fullTasks = this.tasksFilter();
 
         return (
             <div className="App">
@@ -166,12 +160,12 @@ class App extends React.Component {
                     <div className='SortBlock'>
                         <button onClick={this.sortAZ} type='button' className='btn btn-primary'>A-z</button>
                         <button onClick={this.sortZA} type='button' className='btn btn-primary'>Z-a</button>
-                        <button onClick={this.sortDate} type='button' className='btn btn-primary'>Сротировать по дате
+                        <button onClick={this.sortDate} type='button' className='btn btn-primary'>Сортировать по дате
                         </button>
                     </div>
 
-                    <DateFilter
-                        onTextChange ={this.onTextChange}
+                    <TasksFilter
+                        onTaskChange ={this.onTaskChange}
                         onDateChange={this.onDateChange}
                     />
 
@@ -181,12 +175,12 @@ class App extends React.Component {
                                 <Task
                                     doneTask={() => this.doneTask(task.id)}
                                     deleteTask={() => this.deleteTask(task.id)}
-                                    dateFilter={() => this.dateFilter(tasks)}
+                                    dateFilter={() => this.tasksFilter(tasks)}
                                     task={task}
                                     tasks={tasks}
                                     key={task.id}
                                 />
-                            )) : <div>список пуст</div>}
+                            )) : <div className='emptyList'>список пуст</div>}
                     </ul>
                 </div>
             </div>

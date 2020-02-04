@@ -1,5 +1,6 @@
 
 .task {
+    width: 90%;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -8,4 +9,7 @@
 
 .doneTask {
     background: grey;
+}
+.task span {
+    width: 200px;
 }

@@ -1,20 +1,20 @@
 import React from "react";
 
-import './DateFilter.css'
+import './TasksFilter.css'
 
-class DateFilter extends React.Component {
+class TasksFilter extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             inputFilterDate: '',
-            inputText: '',
+            inputTask: '',
         }
     }
 
     dateFilter = () => {
         const {inputFilterDate} = this.state.inputFilterDate;
-        const {inputText} = this.state.inputText;
+        const {inputText} = this.state.inputTask;
 
         if (inputFilterDate) {
             this.props.dateFilter(inputFilterDate);
@@ -22,7 +22,7 @@ class DateFilter extends React.Component {
         }
        if (inputText) {
            this.props.dateFilter(inputText);
-           this.setState({inputText: ''});
+           this.setState({inputTask: ''});
        }
     };
 
@@ -31,31 +31,30 @@ class DateFilter extends React.Component {
         this.props.onDateChange(event.target.value);
 
     };
-    inputTextChange = (event) => {
-        this.setState({inputText: event.target.value});
-        this.props.onTextChange(event.target.value);
+    inputTaskChange = (event) => {
+        this.setState({inputTask: event.target.value});
+        this.props.onTaskChange(event.target.value);
     };
 
     render() {
         const {inputFilterDate} = this.state.inputFilterDate;
-        const {inputText} = this.state.inputText;
+        const {inputTask} = this.state.inputTask;
 
 
         return (
             <div className='filterBlock'>
                 <div className="">
                     <div>
-                        <input onChange={this.inputTextChange} type="text" className='searchInput' value={inputText} />
+                        <input onChange={this.inputTaskChange} type="text" className='searchInput' value={inputTask} />
                     </div>
                     <div className="col-10">
                         <input onChange={this.inputChange} value={inputFilterDate} className="form-control" type="date"
                                id="example-date-input"/>
                     </div>
                 </div>
-               {/* <button onClick={this.dateFilter} type='submit' className='btn btn-primary'>Показать</button>*/}
             </div>
         )
     }
 }
 
-export default DateFilter;
+export default TasksFilter;
