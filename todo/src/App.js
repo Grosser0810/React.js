@@ -1,28 +1,21 @@
 import React from 'react';
 
-import Task from './components/Task/Task'
+
 import AddTask from "./components/ AddTask/AddTask";
 import TasksFilter from "./components/TasksFilter/TasksFilter";
+import TaskList from "./components/TaskList/TaskList";
+import SortBlock from "./components/SortBlock/SortBlock";
+import VisibileTaskList from "./containers/VisibileTaskList";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             tasks: JSON.parse(localStorage.getItem('allTasks')) || [],
             inputDate: '',
             inputTask: '',
         }
     }
-
-    getTaskId = () => {
-        let tasks = this.state.tasks;
-        let arrId = [];
-        for (let i = 0; i < tasks.length; i++) {
-            arrId.push(tasks[i].id)
-        }
-        return Math.max.apply(null, arrId) + 1;
-    };
 
     addTask = (task, dateTask) => {
         this.setState(state => {
@@ -163,40 +156,22 @@ class App extends React.Component {
     };
 
     render() {
-        const {tasks} = this.state;
+
+        //const {tasks} = this.state;
+       // console.log(this.props.tasks)
+
         const fullTasks = this.tasksFilter();
 
         return (
             <div className="App">
                 <div className="container">
-                    <AddTask addTask={this.addTask}/>
-                    <div className='SortBlock'>
-                        <button onClick={this.sortAZ} type='button' className='btn btn-primary'>A-z</button>
-                        <button onClick={this.sortZA} type='button' className='btn btn-primary'>Z-a</button>
-                        <button onClick={this.sortDate} type='button' className='btn btn-primary'>Сортировать по дате</button>
-                    </div>
-                    <div className='sortOF'>
-                        <button onClick={this.sortOF} type='button' className='btn'>сбросить сортировку</button>
-                    </div>
-
-
+                    <AddTask taskId={this.props.taskId}/>
+                    <SortBlock/>
                     <TasksFilter
                         onTaskChange ={this.onTaskChange}
                         onDateChange={this.onDateChange}
                     />
-
-                    <ul className='listGroup'>
-                        { (fullTasks.length !==0) ?
-                            fullTasks.map(task => (
-                                <Task
-                                    doneTask={() => this.doneTask(task.id)}
-                                    deleteTask={() => this.deleteTask(task.id)}
-                                    task={task}
-                                    tasks={tasks}
-                                    key={task.id}
-                                />
-                            )) : <div className='emptyList'>список пуст</div>}
-                    </ul>
+                    <VisibileTaskList tasks={this.props.tasks}/>
                 </div>
             </div>
         )
