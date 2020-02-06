@@ -1,21 +1,20 @@
 import React from "react";
 
 import './Task.css';
+import RemoveTask from "../../containers/RemoveTask";
 
 
-const Task = ({task, ...props}) => {
+const Task = ({ onClick, completed, title, date, id, task }) => {
+    console.log(task);
 
 
     const ActionButton = () => <span className='actionBtn'>
         {
-            task.done ?
-                <button
-                    onClick={props.deleteTask}
-                    type="button"
-                    className="btnDelete">Удалить</button> :
+            completed ?
+                <RemoveTask id={id}/> :
 
                 <button
-                    onClick={props.doneTask}
+                    onClick={onClick}
                     type="button"
                     className="btnDone">Выполнить</button>
         }
@@ -23,7 +22,7 @@ const Task = ({task, ...props}) => {
 
     return (
 
-        <li className={task.done ? 'doneTask task' : 'noDoneTask task'}>
+        <li className={task.completed ? 'doneTask task' : 'noDoneTask task'}>
             <span>{task.title}</span>
             <span className='task-date'>{task.date}</span>
             <ActionButton/>
