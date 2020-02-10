@@ -33,7 +33,6 @@ class App extends React.Component {
     };
 
     addTask = (task, dateTask) => {
-        //this.props.dispatch(addTaskToStore(task, dateTask, this.getTaskId()));
         this.props.addTaskToStore(task,dateTask,this.getTaskId())
     };
 
