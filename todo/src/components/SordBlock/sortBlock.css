@@ -1,3 +1,8 @@
+* {
+    transition: all 0.2s ease;
+    color: #424242;
+    font-size: 16px;
+}
 
 .SortBlock {
     margin: 0 auto;

@@ -1,147 +1,144 @@
 import React from 'react';
 
-
 import AddTask from "./components/ AddTask/AddTask";
 import TasksFilter from "./components/TasksFilter/TasksFilter";
-import TaskList from "./components/TaskList/TaskList";
-import SortBlock from "./components/SortBlock/SortBlock";
-import VisibileTaskList from "./containers/VisibileTaskList";
+import SortBlock from "./components/SordBlock/SortBlock";
+import TasksList from "./components/TasksLIst/TasksList";
+import {connect} from 'react-redux'
+import {addTaskToStore, deleteTask, doneTask } from "./actions/actions";
+
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            tasks: JSON.parse(localStorage.getItem('allTasks')) || [],
+            tasks: this.props.tasks || [],
             inputDate: '',
             inputTask: '',
         }
     }
 
+    getTaskId = () => {
+        let tasks = this.props.tasks;
+        let arrId = [];
+        if (tasks.length === 0) {
+            return 1;
+        } else {
+            for (let i = 0; i < tasks.length; i++) {
+                arrId.push(tasks[i].id)
+            }
+            return Math.max.apply(null, arrId) + 1;
+        }
+    };
+
     addTask = (task, dateTask) => {
-        this.setState(state => {
-            let {tasks} = state;
-            tasks.push({
-                id: tasks.length !== 0 ? this.getTaskId() : 1,
-                title: task,
-                date: dateTask,
-                done: false,
-            });
-            localStorage.setItem('allTasks', JSON.stringify(this.state.tasks));
-
-            return tasks;
-        });
-
+        //this.props.dispatch(addTaskToStore(task, dateTask, this.getTaskId()));
+        this.props.addTaskToStore(task,dateTask,this.getTaskId())
     };
 
     doneTask = id => {
-        const index = this.state.tasks.map(task => task.id).indexOf(id);
+        const index = this.props.tasks.map(task => task.id).indexOf(id);
         this.setState(state => {
-            let {tasks} = state;
-            tasks[index].done = true;
-            localStorage.setItem('allTasks', JSON.stringify(this.state.tasks));
-            return tasks;
-        })
+            let tasks = this.props.tasks;
+            this.props.doneTaskStore(tasks[index].id);
+        });
     };
 
     deleteTask = id => {
-        const index = this.state.tasks.map(task => task.id).indexOf(id);
+        const index = this.props.tasks.map(task => task.id).indexOf(id);
         this.setState(state => {
-            let {tasks} = state;
-            tasks.splice(index, 1);
-            localStorage.setItem('allTasks', JSON.stringify(this.state.tasks));
-            return tasks;
+            let tasks = this.props.tasks;
+            this.props.deleteTaskInStore(tasks[index].id);
         })
     };
 
     sortAZ = () => {
         this.setState(state => {
-                let {tasks} = state;
-                let renderTasks = tasks.sort((a, b) => {
+                let tasks = this.props.tasks;
+                return tasks.sort((a, b) => {
                     let taskA = a.title, taskB = b.title;
                     if (taskA < taskB)
                         return -1;
                     if (taskA > taskB)
                         return 1;
                 });
-                return renderTasks;
             }
         )
     };
 
     sortZA = () => {
         this.setState(state => {
-                let {tasks} = state;
-                let renderTasks = tasks.sort((a, b) => {
+                let tasks = this.props.tasks;
+                return tasks.sort((a, b) => {
                     let taskA = a.title, taskB = b.title;
                     if (taskA > taskB)
                         return -1;
                     if (taskA < taskB)
                         return 1;
                 });
-                return renderTasks;
             }
         )
     };
 
     sortDate = () => {
         this.setState(state => {
-                let {tasks} = state;
-                let renderTasks = tasks.sort((a, b) => {
+                let tasks = this.props.tasks;
+                return tasks.sort((a, b) => {
                     let dateA = new Date(a.date), dateB = new Date(b.date);
                     return dateA - dateB
                 });
-                return renderTasks;
             }
         )
     };
 
-    sortOF = () => {
+    sortOff = () => {
         this.setState(state => {
-                let {tasks} = state;
-                let renderTasks = tasks.sort((a, b) => {
+                let tasks = this.props.tasks;
+                return tasks.sort((a, b) => {
                     let taskA = a.id, taskB = b.id;
                     if (taskA > taskB)
                         return 1;
                     if (taskA < taskB)
                         return -1;
                 });
-                return renderTasks;
             }
         )
     };
 
     tasksFilter = () => {
-        let dateRenderTasks = [];
-        let {tasks} = this.state;
+        let RenderTasks = [];
+        let tasks = this.props.tasks;
 
-        if (this.state.inputDate === '' && this.state.inputTask === ''){
-            dateRenderTasks = this.state.tasks;
+        if (this.state.inputDate === '' && this.state.inputTask === '') {
+            RenderTasks = tasks;
+
         }
 
-        if (this.state.inputTask !== ''){
-            dateRenderTasks = tasks.filter(index => {
-                let name = index.title;
-                let inputValue = this.state.inputTask;
+        if (this.state.inputTask !== '') {
+            RenderTasks = tasks.filter(index => {
+                let name = index.title.toLowerCase();
+                let inputValue = this.state.inputTask.toLowerCase();
                 return name.indexOf(inputValue) !== -1;
-            })
+            });
+
         }
 
         if (this.state.inputDate !== '') {
-            dateRenderTasks = tasks.filter(index => {
+            RenderTasks = tasks.filter(index => {
                 let date = index.date;
                 let filterDate = date.split('T')[0];
                 return filterDate === this.state.inputDate;
             });
             if (this.state.inputTask) {
-                dateRenderTasks = dateRenderTasks.filter(index => {
-                    let name = index.title;
-                    let inputValue = this.state.inputTask;
+                RenderTasks = RenderTasks.filter(index => {
+                    let name = index.title.toLowerCase();
+                    let inputValue = this.state.inputTask.toLowerCase();
                     return name.indexOf(inputValue) !== -1;
                 })
             }
         }
-
-        return dateRenderTasks;
+        return RenderTasks;
     };
 
     onDateChange = (inputDate) => {
@@ -156,26 +153,51 @@ class App extends React.Component {
     };
 
     render() {
-
-        //const {tasks} = this.state;
-       // console.log(this.props.tasks)
-
-        const fullTasks = this.tasksFilter();
+        const {tasks} = this.state;
+        const RenderTasks = this.tasksFilter();
 
         return (
             <div className="App">
                 <div className="container">
-                    <AddTask taskId={this.props.taskId}/>
-                    <SortBlock/>
+                    <AddTask addTask={this.addTask}/>
+                    <SortBlock
+                        sortOF={this.sortOff}
+                        sortAZ={this.sortAZ}
+                        sortZA={this.sortZA}
+                        sortDate={this.sortDate}
+                    />
                     <TasksFilter
-                        onTaskChange ={this.onTaskChange}
+                        onTaskChange={this.onTaskChange}
                         onDateChange={this.onDateChange}
                     />
-                    <VisibileTaskList tasks={this.props.tasks}/>
+                    <TasksList
+                        tasksOnStore={this.props.tasks}
+                        fullTasks={RenderTasks}
+                        doneTask={this.doneTask}
+                        deleteTask={this.deleteTask}
+                        tasks={tasks}
+                    />
                 </div>
             </div>
         )
     }
 }
 
-export default App;
+const getTasks = (tasks) => {
+    return tasks;
+};
+
+const mapStateToProps = state => ({
+    tasks: getTasks(state.tasks)
+});
+
+const mapDispatchToProps = dispatch => ({
+    addTaskToStore: (tasks, dateTasks, id) => dispatch(addTaskToStore(tasks, dateTasks, id)),
+    deleteTaskInStore: id => dispatch(deleteTask(id)),
+    doneTaskStore: id => dispatch(doneTask(id))
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);

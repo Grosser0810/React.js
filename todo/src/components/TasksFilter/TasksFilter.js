@@ -15,7 +15,6 @@ class TasksFilter extends React.Component {
     dateFilter = () => {
         const {inputFilterDate} = this.state.inputFilterDate;
         const {inputText} = this.state.inputTask;
-        console.log(inputText);
 
         if (inputFilterDate) {
             this.props.dateFilter(inputFilterDate);
@@ -30,7 +29,6 @@ class TasksFilter extends React.Component {
     inputChange = (event) => {
         this.setState({inputFilterDate: event.target.value});
         this.props.onDateChange(event.target.value);
-
     };
     inputTaskChange = (event) => {
         this.setState({inputTask: event.target.value});
@@ -40,7 +38,6 @@ class TasksFilter extends React.Component {
     render() {
         const {inputFilterDate} = this.state.inputFilterDate;
         const {inputTask} = this.state.inputTask;
-        //console.log(inputTask);
 
 
         return (
