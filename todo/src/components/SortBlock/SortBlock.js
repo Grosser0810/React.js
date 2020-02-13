@@ -1,20 +1,32 @@
 import React from "react";
 
-import './SortBlock.css';
-
-const SortBlock = () => {
-    return (
+const SortBlock = ({sortAZ, sortZA, sortDate, sortOF}) => {
+    return(
         <div>
             <div className='SortBlock'>
-                <button  type='button' className='btn btn-primary'>A-z</button>
-                <button  type='button' className='btn btn-primary'>Z-a</button>
-                <button  type='button' className='btn btn-primary'>Сортировать по дате</button>
+                <button
+                    onClick={sortAZ}
+                    type='button'
+                    className='btn btn-primary'>A-z
+                </button>
+                <button
+                    onClick={sortZA}
+                    type='button'
+                    className='btn btn-primary'>Z-a
+                </button>
+                <button
+                    onClick={sortDate}
+                    type='button'
+                    className='btn btn-primary'>Сортировать по дате
+                </button>
             </div>
             <div className='sortOF'>
-                <button type='button' className='btn'>сбросить сортировку</button>
+                <button
+                    onClick={sortOF}
+                    type='button'
+                    className='btn'>сбросить сортировку</button>
             </div>
         </div>
-
     )
 };
 

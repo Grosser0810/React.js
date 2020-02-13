@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d30f4ff5-fa16-4ef7-92da-ee19e2e575b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ AddTask/AddTask.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AddTask/AddTask.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ AddTask/AddTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AddTask/AddTask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="a891c73d-e5ed-4cd5-aaf1-c8a03d59b9f4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1XTatHbRkRFBaUWAZ8Ffa22xcXB" />
+  <component name="ProjectId" id="1Xi4ifVJ8kNTSVXWFpKSTxSsc7s" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,7 +20,6 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -47,42 +41,22 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d30f4ff5-fa16-4ef7-92da-ee19e2e575b0" name="Default Changelist" comment="" />
-      <created>1581072750306</created>
+      <changelist id="a891c73d-e5ed-4cd5-aaf1-c8a03d59b9f4" name="Default Changelist" comment="" />
+      <created>1581515710507</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1581072750306</updated>
-      <workItem from="1581072751976" duration="153000" />
-      <workItem from="1581079242791" duration="1249000" />
-      <workItem from="1581499179575" duration="12434000" />
+      <updated>1581515710507</updated>
+      <workItem from="1581515715736" duration="371000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>28</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>43</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>54</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="100" y="123" width="1240" height="598" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581515777880">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state x="100" y="123" width="1240" height="598" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.804@0.23.1440.804" timestamp="1581515777880" />
   </component>
 </project>
