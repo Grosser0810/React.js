@@ -13,24 +13,27 @@ class AddTask extends React.Component {
     }
 
     addTask = () => {
-        const {input} = this.state;
-        const {inputDate} = this.state;
+        const input = this.state.input;
+        const inputDate = this.state.inputDate;
+
         let inputText = document.querySelector('input.inputText');
         let inputDateTask = document.querySelector('input.inputDate');
 
-
         if (!input && !inputDate) {
-            inputText.style.border ='1px solid #ff7043';
-            inputDateTask.style.border ='1px solid #ff7043';
-        } else if(!input && inputDate) {
-            inputDateTask.style.border ='1px solid #e0e0e0';
-            inputText.style.border ='1px solid #ff7043';
-        } else if(input && !inputDate) {
-            inputText.style.border ='1px solid #e0e0e0';
-            inputDateTask.style.border ='1px solid #ff7043';
-        }else{
-            inputText.style.border ='1px solid #e0e0e0';
-            inputDateTask.style.border ='1px solid #e0e0e0';
+            inputText.classList.add('broken')
+            inputDateTask.classList.add('broken')
+        }
+        if(!input && inputDate) {
+            inputText.classList.add('broken');
+            inputDateTask.classList.remove('broken')
+        }
+        if(input && !inputDate) {
+            inputText.classList.remove('broken');
+            inputDateTask.classList.add('broken');
+        }
+        if(input && inputDate) {
+            inputText.classList.remove('broken');
+            inputDateTask.classList.remove('broken');
             this.props.addTask(input, inputDate);
             this.setState({input: '', inputDate: ''})
         }
@@ -44,19 +47,16 @@ class AddTask extends React.Component {
     };
 
     render() {
-        const {input} = this.state;
-        const {inputDate} = this.state;
-
 
         return (
             <div className='addTask'>
                 <div className='titleAdd'>Добавить задачу</div>
                 <form className=''>
                     <div>
-                        <input onChange={this.inputChange} value={input} className='inputText' type="text" />
+                        <input onChange={this.inputChange} value={this.state.input} className='inputText' type="text" />
                     </div>
                     <div className="">
-                        <input onChange={this.inputChangeDate} value={inputDate} className="inputDate" type="date"
+                        <input onChange={this.inputChangeDate} value={this.state.inputDate} className="inputDate" type="date"
                                id="example-date-input" />
                     </div>
                     <div>

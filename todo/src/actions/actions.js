@@ -1,7 +1,7 @@
 
-export const addTaskToStore = (title, date, id) => ({
+
+export const addTaskToStore = (title, date) => ({
     type: 'ADD_TASK_TO_STORE',
-    id,
     title,
     date,
 });

@@ -5,7 +5,7 @@ import TasksFilter from "./components/TasksFilter/TasksFilter";
 import SortBlock from "./components/SordBlock/SortBlock";
 import TasksList from "./components/TasksLIst/TasksList";
 import {connect} from 'react-redux'
-import {addTaskToStore, deleteTask, doneTask } from "./actions/actions";
+import {addTaskToStore, deleteTask, doneTask} from "./actions/actions";
 
 
 class App extends React.Component {
@@ -13,96 +13,51 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            tasks: this.props.tasks || [],
             inputDate: '',
             inputTask: '',
+            sortFlag: ''
         }
     }
 
-    getTaskId = () => {
-        let tasks = this.props.tasks;
-        let arrId = [];
-        if (tasks.length === 0) {
-            return 1;
-        } else {
-            for (let i = 0; i < tasks.length; i++) {
-                arrId.push(tasks[i].id)
-            }
-            return Math.max.apply(null, arrId) + 1;
-        }
-    };
-
     addTask = (task, dateTask) => {
-        this.props.addTaskToStore(task,dateTask,this.getTaskId())
+        this.props.addTaskToStore(task, dateTask)
     };
 
     doneTask = id => {
         const index = this.props.tasks.map(task => task.id).indexOf(id);
-        this.setState(state => {
-            let tasks = this.props.tasks;
-            this.props.doneTaskStore(tasks[index].id);
-        });
+        let tasks = this.props.tasks;
+        this.props.doneTaskStore(tasks[index].id);
+
     };
 
     deleteTask = id => {
         const index = this.props.tasks.map(task => task.id).indexOf(id);
-        this.setState(state => {
-            let tasks = this.props.tasks;
-            this.props.deleteTaskInStore(tasks[index].id);
-        })
+        let tasks = this.props.tasks;
+        this.props.deleteTaskInStore(tasks[index].id);
     };
 
     sortAZ = () => {
-        this.setState(state => {
-                let tasks = this.props.tasks;
-                return tasks.sort((a, b) => {
-                    let taskA = a.title, taskB = b.title;
-                    if (taskA < taskB)
-                        return -1;
-                    if (taskA > taskB)
-                        return 1;
-                });
-            }
-        )
+        this.setState(() => {
+            return {sortFlag:'az'}
+        })
     };
 
     sortZA = () => {
-        this.setState(state => {
-                let tasks = this.props.tasks;
-                return tasks.sort((a, b) => {
-                    let taskA = a.title, taskB = b.title;
-                    if (taskA > taskB)
-                        return -1;
-                    if (taskA < taskB)
-                        return 1;
-                });
-            }
-        )
+        this.setState(() => {
+            return {sortFlag:'za'}
+        })
     };
 
     sortDate = () => {
-        this.setState(state => {
-                let tasks = this.props.tasks;
-                return tasks.sort((a, b) => {
-                    let dateA = new Date(a.date), dateB = new Date(b.date);
-                    return dateA - dateB
-                });
-            }
-        )
+        this.setState(() => {
+            return {sortFlag:'date'}
+        })
     };
 
     sortOff = () => {
-        this.setState(state => {
-                let tasks = this.props.tasks;
-                return tasks.sort((a, b) => {
-                    let taskA = a.id, taskB = b.id;
-                    if (taskA > taskB)
-                        return 1;
-                    if (taskA < taskB)
-                        return -1;
-                });
-            }
-        )
+        this.setState(() => {
+            return {sortFlag:'off'}
+        })
     };
 
     tasksFilter = () => {
@@ -111,7 +66,6 @@ class App extends React.Component {
 
         if (this.state.inputDate === '' && this.state.inputTask === '') {
             RenderTasks = tasks;
-
         }
 
         if (this.state.inputTask !== '') {
@@ -120,7 +74,6 @@ class App extends React.Component {
                 let inputValue = this.state.inputTask.toLowerCase();
                 return name.indexOf(inputValue) !== -1;
             });
-
         }
 
         if (this.state.inputDate !== '') {
@@ -140,6 +93,38 @@ class App extends React.Component {
         return RenderTasks;
     };
 
+    finalSort = () => {
+        let tasks = this.tasksFilter().slice();
+        if (this.state.sortFlag === 'az') {
+            return tasks.sort((a, b) => {
+                let taskA = a.title, taskB = b.title;
+                if (taskA < taskB)
+                    return -1;
+                if (taskA > taskB)
+                    return 1;
+            });
+        }
+        if (this.state.sortFlag === 'za') {
+            return tasks.sort((a, b) => {
+                let taskA = a.title, taskB = b.title;
+                if (taskA > taskB)
+                    return -1;
+                if (taskA < taskB)
+                    return 1;
+            });
+        }
+        if (this.state.sortFlag === 'date') {
+            return tasks.sort((a, b) => {
+                let dateA = new Date(a.date), dateB = new Date(b.date);
+                return dateA - dateB
+            });
+        }
+        if (this.state.sortFlag === 'off') {
+            return this.tasksFilter();
+        }
+        return tasks;
+    };
+
     onDateChange = (inputDate) => {
         this.setState({
             inputDate
@@ -152,9 +137,7 @@ class App extends React.Component {
     };
 
     render() {
-        const {tasks} = this.state;
-        const RenderTasks = this.tasksFilter();
-
+        const RenderTasks = this.finalSort();
         return (
             <div className="App">
                 <div className="container">
@@ -170,11 +153,9 @@ class App extends React.Component {
                         onDateChange={this.onDateChange}
                     />
                     <TasksList
-                        tasksOnStore={this.props.tasks}
                         fullTasks={RenderTasks}
                         doneTask={this.doneTask}
                         deleteTask={this.deleteTask}
-                        tasks={tasks}
                     />
                 </div>
             </div>
@@ -191,7 +172,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    addTaskToStore: (tasks, dateTasks, id) => dispatch(addTaskToStore(tasks, dateTasks, id)),
+    addTaskToStore: (tasks, dateTasks) => dispatch(addTaskToStore(tasks, dateTasks)),
     deleteTaskInStore: id => dispatch(deleteTask(id)),
     doneTaskStore: id => dispatch(doneTask(id))
 });

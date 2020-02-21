@@ -1,7 +1,7 @@
 import Task from "../Task/Task";
 import React from "react";
 
-const TasksList = ({fullTasks, doneTask, deleteTask, tasks, ...props}) => {
+const TasksList = ({fullTasks, doneTask, deleteTask, ...props}) => {
     return(
         <ul className='listGroup'>
             { (fullTasks !== undefined) ?
