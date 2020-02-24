@@ -1,0 +1,54 @@
+
+.task {
+    margin: 5px auto;
+    width: 70%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid #f5f5f5;
+    border-radius: 3px;
+
+}
+
+.doneTask {
+    background: #f5f5f5;
+}
+.task span {
+min-width: 200px;
+}
+
+.btnDelete,
+.btnDone {
+    cursor: pointer;
+    padding: 10px 0;
+    color: white;
+    width: 150px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .2)
+}
+.btnDelete {
+    background: #ff7043;
+}
+.btnDone {
+    background: #66bb6a;
+}
+
+.btnDone,
+.btnDelete {
+    outline: none;
+}
+.btnDone:hover {
+    background: #81c784;
+}
+.btnDelete:hover {
+    background: #ffa270;
+}
+.btnDelete:active {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset;
+}
+.btnDone:active {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset;
+}
