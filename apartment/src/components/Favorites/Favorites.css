@@ -1,0 +1,21 @@
+.favorites{
+    margin: 0 auto;
+    width: 90%;
+}
+.
+.favorites  td{
+    color: #212121;
+}
+.favoritesCard {
+    margin-top: 20px;
+    padding: 30px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2)
+}
+
+.favoritesCard .img img {
+    width: 100%;
+
+}
+.favorites div span {
+    color: #212121;
+}

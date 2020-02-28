@@ -1,0 +1,9 @@
+.favoritesButton {
+    text-decoration: none;
+    padding: 10px;
+    background: #2196f3;
+    border-radius: 4px;
+    border: none;
+    margin-right: 10px;
+    font-size: 13px;
+}
