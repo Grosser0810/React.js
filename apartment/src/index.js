@@ -12,9 +12,9 @@ const store = createStore(rootReducer, persistedState, window.__REDUX_DEVTOOLS_E
 
 store.subscribe(() => {
     localStorage.setItem('reduxState', JSON.stringify(store.getState()))
-    //localStorage.clear()
-});
 
+});
+//localStorage.clear()
 render(
     <Provider store={store}>
         <App />

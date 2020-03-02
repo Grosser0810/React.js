@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Header from "./components/Header/Header";
 import StartPage from './pages/StartPage'
 import SoloApartmentPage from './pages/SoloApartmentPage'
@@ -26,7 +26,7 @@ class App extends React.Component {
     executeQuery(query) {
 
         this.setState({isLoading: true});
-        fetch('https://cors-anywhere.herokuapp.com' + query, {})
+        fetch('https://cors-anywhere.herokuapp.com' + query)
             .then(response => response.json())
             .then(json => this.handleResponse(json.response))
             .catch(error =>
@@ -40,7 +40,6 @@ class App extends React.Component {
         this.setState(() => {
             return {loadedApartment: arrApartments}
         })
-
     }
 
     onSearchPressed() {
@@ -74,8 +73,6 @@ class App extends React.Component {
     render() {
         //this.onSearchPressedState().bind(this); // как то надо загружать сходу квартиры?????????
         //console.log(this.state.loadedApartment)
-        //console.log(Number("https://imgs.nestimg.com/wine_office_court_farringdon_ec4a_7780063582800601705.jpg".replace(/\D+/g,""))
-        // let aaa = "https://imgs.nestimg.com/wine_office_court_farringdon_ec4a_7780063582800601705.jpg";
 
         return (
             <div className="App">

@@ -31,3 +31,13 @@
     max-width: 300px;
     color: #212121;
 }
+
+.addToFavorites {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    background: #ffb300;
+    color: whitesmoke;
+
+    font-size: 20px;
+}

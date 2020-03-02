@@ -10,6 +10,20 @@ class SoloApartment extends React.Component {
         }
     }
 
+    addApartment = () => {
+        const apartment = this.props.apartment;
+        this.props.addApartmentToFavorites(
+            apartment.img_url,
+            apartment.title,
+            apartment.price_formatted,
+            apartment.bedroom_number,
+            apartment.bathroom_number,
+            apartment.car_spaces,
+            apartment.summary,
+            apartment.updated_in_days_formatted,
+            apartment.datasource_name,)
+    };
+
     render() {
         const apartment = this.props.apartment;
 
@@ -25,6 +39,9 @@ class SoloApartment extends React.Component {
                             <div className='title'>
                                 {apartment.title}
                             </div>
+                            <p className='soloPrice'>
+                                {apartment.price_formatted}
+                            </p>
                             <div className='flex'>
                                 <table>
                                     <thead>
@@ -43,6 +60,12 @@ class SoloApartment extends React.Component {
                                     </thead>
                                 </table>
                                 <div className='description'>{apartment.summary}</div>
+                            </div>
+                            <div>
+                                <button
+                                    className='addToFavorites'
+                                    onClick={this.addApartment}
+                                >Добавить в избранное</button>
                             </div>
                         </div>
                         : <div></div>

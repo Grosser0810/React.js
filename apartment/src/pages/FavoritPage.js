@@ -1,19 +1,43 @@
 import React from "react";
-import Favorites from "../components/Favorites/Favorites";
+
+import {connect} from 'react-redux';
+import {deleteApartment} from "../actions/actions";
+import FavoritesApartmentList from '../components/FavoritesApartmentstList/FavoritesApartmentsList'
 
 class FavoritPage extends React.Component{
-    render() {
 
+    deleteApartmentInStore = id => {
+        const index = this.props.apartments.map(apartments => apartments.id).indexOf(id);
+        let tasks = this.props.apartments;
+        this.props.deleteApartment(tasks[index].id);
+    };
+
+    render() {
         return(
             <div>
-                <Favorites
-                    apartment={this.props.location.myProps}
+                <FavoritesApartmentList
+                    apartments={this.props.apartments}
+                    deleteApartmentInStore={this.deleteApartmentInStore}
                 />
             </div>
         )
     }
+}
 
+const getApartments = (apartments) => {
+    return apartments;
 };
 
+const mapStateToProps = state => ({
+    apartments: getApartments(state.apartments)
+});
 
-export default FavoritPage;
+const mapDispatchToProps = dispatch => ({
+    deleteApartment: id => dispatch(deleteApartment(id)),
+});
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(FavoritPage);
