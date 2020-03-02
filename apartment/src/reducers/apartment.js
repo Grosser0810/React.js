@@ -17,10 +17,16 @@ const tasks = (state = [], action) => {
 
     switch (action.type) {
         case 'ADD_APARTMENT_TO_STORE':
+            for(let i=0; i<state.length ;i++){
+                if(state[i].id === parseInt(action.lister_url.match(/\d+/))){
+                    alert('уже добавлен в избранное')
+                    return state;
+                }
+            }
             return [
                 ...state,
                 {
-                    id: getApartmentId(),
+                    id: parseInt(action.lister_url.match(/\d+/)) ,
                     img_url:action.img_url,
                     title: action.title,
                     price_formatted: action.price_formatted,

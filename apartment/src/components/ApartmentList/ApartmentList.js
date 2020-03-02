@@ -3,10 +3,13 @@ import './ApartmentList.css'
 import Apartment from "./Apartment/Apartment";
 
 class ApartmentList extends React.Component {
+    getKey = (string) => {
+        let id = parseInt(string.match(/\d+/));
+        return id;
+    };
 
     render() {
-        //console.log()
-        return(
+        return (
             <div>
                 <div className='container apartmentList'>
                     {
@@ -14,9 +17,9 @@ class ApartmentList extends React.Component {
                             this.props.apartments.map(apartment => (
                                 <Apartment
                                     apartment={apartment}
-                                    key={apartment.latitude + apartment.longitude}
+                                    key={this.getKey(apartment.lister_url)}
                                 />
-                            ) ) : <p className='empty'> В {this.props.searchString} не найдено квартир для аренды</p>
+                            )) : <p className='empty'> В {this.props.searchString} не найдено квартир для аренды</p>
                     }
                 </div>
             </div>

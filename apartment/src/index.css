@@ -18,3 +18,20 @@ button:hover {
 button:active {
     box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset;
 }
+
+.more {
+    margin: 0 auto;
+    text-align: center;
+}
+.more button {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+    background: white;
+    color: #616161;
+    padding: 10px;
+    border: 1px solid #616161;
+}
+.hidden {
+    display: none;
+}

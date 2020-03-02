@@ -1,4 +1,5 @@
 export const addApartmentToStore = (
+    lister_url,
     img_url,
     title,
     price_formatted,
@@ -9,6 +10,7 @@ export const addApartmentToStore = (
     updated_in_days_formatted,
     datasource_name) => ({
         type: 'ADD_APARTMENT_TO_STORE',
+        lister_url,
         img_url,
         title,
         price_formatted,

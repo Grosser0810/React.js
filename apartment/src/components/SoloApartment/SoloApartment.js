@@ -13,6 +13,7 @@ class SoloApartment extends React.Component {
     addApartment = () => {
         const apartment = this.props.apartment;
         this.props.addApartmentToFavorites(
+            apartment.lister_url,
             apartment.img_url,
             apartment.title,
             apartment.price_formatted,
@@ -21,7 +22,8 @@ class SoloApartment extends React.Component {
             apartment.car_spaces,
             apartment.summary,
             apartment.updated_in_days_formatted,
-            apartment.datasource_name,)
+            apartment.datasource_name,
+        )
     };
 
     render() {
@@ -65,7 +67,8 @@ class SoloApartment extends React.Component {
                                 <button
                                     className='addToFavorites'
                                     onClick={this.addApartment}
-                                >Добавить в избранное</button>
+                                >Добавить в избранное
+                                </button>
                             </div>
                         </div>
                         : <div></div>
