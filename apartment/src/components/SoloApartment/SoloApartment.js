@@ -25,6 +25,7 @@ class SoloApartment extends React.Component {
             apartment.summary,
             apartment.updated_in_days_formatted,
             apartment.datasource_name,
+            apartment.price_type,
         )
     };
 
@@ -42,7 +43,7 @@ class SoloApartment extends React.Component {
         const redirect = this.state.redirect;
 
         if (redirect) {
-            return <Redirect to='/favorite'/>;
+            return <Redirect to='/favorite'/>
         }
 
         return (

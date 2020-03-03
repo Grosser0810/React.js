@@ -23,6 +23,7 @@ const tasks = (state = [], action) => {
                     summary: action.summary,
                     updated_in_days_formatted: action.updated_in_days_formatted,
                     datasource_name: action.datasource_name,
+                    price_type: action.price_type,
                     added: true,
                 }
             ];

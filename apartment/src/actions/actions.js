@@ -8,7 +8,8 @@ export const addApartmentToStore = (
     car_spaces,
     summary,
     updated_in_days_formatted,
-    datasource_name) => ({
+    datasource_name,
+    price_type,) => ({
         type: 'ADD_APARTMENT_TO_STORE',
         lister_url,
         img_url,
@@ -20,6 +21,7 @@ export const addApartmentToStore = (
         summary,
         updated_in_days_formatted,
         datasource_name,
+        price_type,
 });
 
 export const deleteApartment = id => ({

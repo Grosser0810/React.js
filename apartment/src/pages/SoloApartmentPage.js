@@ -5,8 +5,8 @@ import {addApartmentToStore, deleteApartment} from "../actions/actions";
 
 class SoloApartmentPage extends React.Component{
 
-    addApartmentToFavorites = (lister_url, img_url, title, price_formatted, bedroom_number, bathroom_number, car_spaces, summary,updated_in_days_formatted, datasource_name) => {
-        this.props.addApartmentToStore(lister_url, img_url, title, price_formatted, bedroom_number, bathroom_number, car_spaces, summary,updated_in_days_formatted, datasource_name)
+    addApartmentToFavorites = (lister_url, img_url, title, price_formatted, bedroom_number, bathroom_number, car_spaces, summary,updated_in_days_formatted, datasource_name, price_type,) => {
+        this.props.addApartmentToStore(lister_url, img_url, title, price_formatted, bedroom_number, bathroom_number, car_spaces, summary,updated_in_days_formatted, datasource_name, price_type,)
     };
 
     deleteApartmentInStore = (id) => {
@@ -39,8 +39,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    addApartmentToStore: (lister_url, img_url, title, price_formatted, bedroom_number, bathroom_number, car_spaces, summary,updated_in_days_formatted, datasource_name) =>
-    dispatch(addApartmentToStore(lister_url, img_url, title, price_formatted, bedroom_number, bathroom_number, car_spaces, summary,updated_in_days_formatted, datasource_name)),
+    addApartmentToStore: (lister_url, img_url, title, price_formatted, bedroom_number, bathroom_number, car_spaces, summary,updated_in_days_formatted, datasource_name, price_type,) =>
+    dispatch(addApartmentToStore(lister_url, img_url, title, price_formatted, bedroom_number, bathroom_number, car_spaces, summary,updated_in_days_formatted, datasource_name, price_type,)),
     deleteApartment: id => dispatch(deleteApartment(id))
 });
 
