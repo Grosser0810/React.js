@@ -1,4 +1,5 @@
 .favoritesButton {
+    position: relative;
     text-decoration: none;
     padding: 10px;
     background: #2196f3;
@@ -6,4 +7,18 @@
     border: none;
     margin-right: 10px;
     font-size: 13px;
+}
+
+.favoritesButton  .number {
+    padding: 5px;
+    font-size: 8px;
+    background: #f4511e;
+    border-radius: 50%;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+}
+
+.favoritesButton  .number span{
+    padding: 0 2px;
 }

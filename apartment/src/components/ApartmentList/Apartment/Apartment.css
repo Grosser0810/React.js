@@ -50,8 +50,9 @@
 }
 .listing_list__price {
     height: 100%;
-    background: #e0e0e0
+    background: #e0e0e0;
 }
+
 .listing_list__price div {
     font-weight: bold;
     padding: 20px 0;

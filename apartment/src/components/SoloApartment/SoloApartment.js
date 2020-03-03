@@ -1,5 +1,6 @@
 import React from "react";
 import './SoloApartment.css';
+import { Redirect } from 'react-router';
 
 class SoloApartment extends React.Component {
     constructor(props) {
@@ -7,6 +8,7 @@ class SoloApartment extends React.Component {
 
         this.state = {
             apartment: this.props.apartment,
+            redirect: false,
         }
     }
 
@@ -26,8 +28,22 @@ class SoloApartment extends React.Component {
         )
     };
 
+    deleteApartment = () => {
+        this.setState(()=> {
+            return {redirect: true}
+        });
+        const apartment = this.props.apartment;
+        this.props.deleteApartmentInStore(apartment.id);
+
+    };
+
     render() {
         const apartment = this.props.apartment;
+        const redirect = this.state.redirect;
+
+        if (redirect) {
+            return <Redirect to='/favorite'/>;
+        }
 
         return (
             <div className='apartment'>
@@ -41,9 +57,14 @@ class SoloApartment extends React.Component {
                             <div className='title'>
                                 {apartment.title}
                             </div>
-                            <p className='soloPrice'>
-                                {apartment.price_formatted}
-                            </p>
+                            <div className='priceBlock'>
+                                <span className='soloPrice'>
+                                    {apartment.price_formatted + ' per '}
+                                </span>
+                                <span>
+                                    {apartment.price_type}
+                                </span>
+                            </div>
                             <div className='flex'>
                                 <table>
                                     <thead>
@@ -63,12 +84,17 @@ class SoloApartment extends React.Component {
                                 </table>
                                 <div className='description'>{apartment.summary}</div>
                             </div>
-                            <div>
-                                <button
-                                    className='addToFavorites'
-                                    onClick={this.addApartment}
-                                >Добавить в избранное
-                                </button>
+                            <div className='buttonBlock'>
+                                {apartment.added ? <button
+                                        className='deleteInFavorite soloButton'
+                                        onClick={this.deleteApartment}
+                                    >Удалить из избранного
+                                    </button> :
+                                    <button
+                                        className='addToFavorites soloButton'
+                                        onClick={this.addApartment}
+                                    >Добавить в избранное
+                                    </button>}
                             </div>
                         </div>
                         : <div></div>

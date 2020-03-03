@@ -9,12 +9,15 @@ button {
     outline: none;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2)
 }
+
 .container {
     max-width: 90%;
 }
+
 button:hover {
     cursor: pointer;
 }
+
 button:active {
     box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset;
 }
@@ -23,6 +26,7 @@ button:active {
     margin: 0 auto;
     text-align: center;
 }
+
 .more button {
     margin-top: 20px;
     width: 100%;
@@ -32,6 +36,7 @@ button:active {
     padding: 10px;
     border: 1px solid #616161;
 }
+
 .hidden {
     display: none;
 }

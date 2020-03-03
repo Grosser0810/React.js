@@ -32,12 +32,31 @@
     color: #212121;
 }
 
-.addToFavorites {
+.addToFavorites,
+.deleteInFavorite {
+    margin:0 auto;
     padding: 5px 15px;
     border: none;
     border-radius: 4px;
-    background: #ffb300;
     color: whitesmoke;
-
     font-size: 20px;
+}
+.addToFavorites {
+    background: #ffb300;
+}
+
+.deleteInFavorite {
+    background: #f4511e;
+}
+.soloButton {
+    margin-top: 30px;
+}
+.priceBlock {
+    text-align: center;
+    color: #212121;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.buttonBlock {
+    text-align: center;
 }

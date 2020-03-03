@@ -2,31 +2,18 @@ import React from "react";
 
 const tasks = (state = [], action) => {
 
-    let getApartmentId = () => {
-        let apartments = state;
-        let arrId = [];
-        if (apartments.length === 0) {
-            return 1;
-        } else {
-            for (let i = 0; i < apartments.length; i++) {
-                arrId.push(apartments[i].id)
-            }
-            return Math.max.apply(null, arrId) + 1;
-        }
-    };
-
     switch (action.type) {
         case 'ADD_APARTMENT_TO_STORE':
             for(let i=0; i<state.length ;i++){
                 if(state[i].id === parseInt(action.lister_url.match(/\d+/))){
-                    alert('уже добавлен в избранное')
+                    alert('уже добавлен в избранное');
                     return state;
                 }
             }
             return [
                 ...state,
                 {
-                    id: parseInt(action.lister_url.match(/\d+/)) ,
+                    id: parseInt(action.lister_url.match(/\d+/)),
                     img_url:action.img_url,
                     title: action.title,
                     price_formatted: action.price_formatted,
@@ -36,8 +23,10 @@ const tasks = (state = [], action) => {
                     summary: action.summary,
                     updated_in_days_formatted: action.updated_in_days_formatted,
                     datasource_name: action.datasource_name,
+                    added: true,
                 }
             ];
+
         case 'DELETE_APARTMENT':
             return state.filter(apartment => apartment.id !== action.id);
         default:

@@ -5,12 +5,11 @@ import {Link} from "react-router-dom";
 class Favorites extends React.Component {
     render() {
         const apartment = this.props.apartment;
-
+        //console.log(apartment)
         return (
             <Link to={{
-                pathname: '/apartment/',
+                pathname: '/apartment/' + apartment.id,
                 myProps: apartment,
-
             }}
                   className='listing_list'
             >
@@ -31,6 +30,7 @@ class Favorites extends React.Component {
                 <div className='listing_list__price'>
                     <div>{apartment.price_formatted}</div>
                 </div>
+
             </Link>
         )
     }

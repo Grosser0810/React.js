@@ -4,6 +4,10 @@ import Header from "./components/Header/Header";
 import StartPage from './pages/StartPage'
 import SoloApartmentPage from './pages/SoloApartmentPage'
 import FavoritPage from './pages/FavoritPage'
+import {createBrowserHistory} from 'history';
+import {connect} from 'react-redux';
+
+const history = createBrowserHistory();
 
 class App extends React.Component {
     constructor(props) {
@@ -16,6 +20,10 @@ class App extends React.Component {
             pageNumber: 1,
         };
     }
+    componentDidMount() {
+        this.startLoad()
+    }
+
 
     onSearchChanged = (searchString) => {
         this.setState({
@@ -36,7 +44,6 @@ class App extends React.Component {
 
     handleResponse(response) {
         let arrApartments = response.listings;
-        console.log(arrApartments);
         this.setState(() => {
             return {
                 loadedApartment: arrApartments,
@@ -53,8 +60,6 @@ class App extends React.Component {
         return this.executeQuery(query);
     }
 
-
-//-------------------more--------------------------------
     executeQueryMore(query) {
         fetch('https://cors-anywhere.herokuapp.com' + query)
             .then(response => response.json())
@@ -76,8 +81,13 @@ class App extends React.Component {
     }
 
     onSearchPressedMore() {
-        let query = this.urlForQueryAndPage('place_name', this.state.searchString, this.state.pageNumber);
+        let query = this.urlForQueryAndPage('place_name', this.state.searchString || 'london', this.state.pageNumber);
         return this.executeQueryMore(query);
+    }
+
+    startLoad() {
+        let query = this.urlForQueryAndPage('place_name', 'london', 1);
+        return this.executeQuery(query);
     }
 
     urlForQueryAndPage = (key, value, pageNumber) => {
@@ -99,11 +109,10 @@ class App extends React.Component {
     };
 
     render() {
-
         return (
             <div className="App">
-                <BrowserRouter>
-                    <Header/>
+                <BrowserRouter history={history}>
+                    <Header favoriteApartments={this.props.apartments}/>
                     <Switch>
                         <Route exact path='/'
                                render={(props) => <StartPage
@@ -116,7 +125,7 @@ class App extends React.Component {
                                />}
 
                         />
-                        <Route path='/apartment'
+                        <Route path='/apartment/:id'
                                render={(props) => <SoloApartmentPage
                                    {...props}
                                />}
@@ -134,5 +143,15 @@ class App extends React.Component {
     }
 }
 
+const getApartments = (apartments) => {
+    return apartments;
+};
 
-export default App;
+const mapStateToProps = state => ({
+    apartments: getApartments(state.apartments),
+
+});
+
+export default connect(
+    mapStateToProps,
+)(App);
