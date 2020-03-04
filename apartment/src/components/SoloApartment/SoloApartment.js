@@ -49,7 +49,7 @@ class SoloApartment extends React.Component {
         return (
             <div className='apartment'>
                 {
-                    apartment !== undefined ?
+                    apartment ?
                         <div className='apartmentCard'>
 
                             <div className='img'>

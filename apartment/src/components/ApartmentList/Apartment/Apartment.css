@@ -1,4 +1,5 @@
 .listing_list {
+    transition: 0.3s ease;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
@@ -7,7 +8,11 @@
     box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .2)
 }
 .listing_list:hover {
+    margin-left: 3px;
     cursor: pointer;
+}
+.listing_list:active {
+    box-shadow: none;
 }
 
 .listing_list__image,
@@ -61,3 +66,4 @@
     background: #757575;
     color:whitesmoke;
 }
+

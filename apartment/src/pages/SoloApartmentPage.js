@@ -14,7 +14,6 @@ class SoloApartmentPage extends React.Component{
     };
 
     render() {
-        console.log(this.props.apartments);
         return(
             <div>
                 <SoloApartment
@@ -26,8 +25,7 @@ class SoloApartmentPage extends React.Component{
             </div>
         )
     }
-
-};
+}
 
 const getApartments = (apartments) => {
     return apartments;

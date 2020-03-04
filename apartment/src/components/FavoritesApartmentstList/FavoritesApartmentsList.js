@@ -7,16 +7,16 @@ class ApartmentList extends React.Component {
 
     render() {
 
-        return(
+        return (
             <div>
                 <div className='container apartmentList'>
                     {
-                            this.props.apartments.map(apartment => (
-                                <Favorites
-                                    apartment={apartment}
-                                    key={apartment.id}
-                                />
-                            ) )
+                        this.props.apartments.map(apartment => (
+                            <Favorites
+                                apartment={apartment}
+                                key={apartment.id}
+                            />
+                        ))
                     }
                 </div>
             </div>
