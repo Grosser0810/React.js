@@ -1,0 +1,55 @@
+.footerBlock {
+  position: relative;
+  background: #1b1b1b; }
+  .footerBlock h2::before {
+    position: absolute;
+    font-size: 84px;
+    opacity: 0.05;
+    top: -22px;
+    right: 0;
+    content: 'oh what';
+    text-transform: uppercase; }
+  .footerBlock h2 {
+    font-family: 'Segoe UI',  sans-serif;
+    padding-top: 100px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700; }
+  .footerBlock button {
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+    border: none;
+    background: #e1e1e1;
+    font-family: Montserrat,Arial,Tahoma,Verdana,sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 10px 15px; }
+  .footerBlock .iconGroup {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 150px; }
+    .footerBlock .iconGroup a {
+      transition: 0.3s ease;
+      text-decoration: none;
+      color: #ffffff; }
+    .footerBlock .iconGroup a:hover {
+      color: #7e5a38; }
+    .footerBlock .iconGroup svg {
+      padding: 5px; }
+  .footerBlock .iconGroup::after {
+    position: absolute;
+    font-weight: 700;
+    color: white;
+    content: 'oxbat';
+    font-size: 84px;
+    opacity: 0.05;
+    bottom: 10px;
+    left: 20%;
+    text-transform: uppercase; }
+
+/*# sourceMappingURL=Footer.css.map */
