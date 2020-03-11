@@ -4,12 +4,12 @@ import Header from "./components/Header/Header";
 import StartPage from './pages/StartPage'
 import SoloApartmentPage from './pages/SoloApartmentPage'
 import FavoritesPage from './pages/FavoritesPage'
-import {createBrowserHistory} from 'history';
+
 import {connect} from 'react-redux';
 import {addApartmentToStore} from "./actions/actions";
 
 
-const history = createBrowserHistory();
+
 
 class App extends React.Component {
     constructor(props) {
@@ -151,10 +151,10 @@ class App extends React.Component {
     };
 
     render() {
-
+        
         return (
             <div className="App">
-                <BrowserRouter history={history}>
+                <BrowserRouter >
                     <Header favoriteApartments={this.props.apartments}/>
 
                     <Switch>
