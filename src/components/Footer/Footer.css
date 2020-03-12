@@ -5,13 +5,14 @@
     position: absolute;
     font-size: 84px;
     opacity: 0.05;
-    top: -22px;
+    top: -20px;
     right: 0;
     content: 'oh what';
     text-transform: uppercase; }
   .footerBlock h2 {
     font-family: 'Segoe UI',  sans-serif;
     padding-top: 100px;
+    padding-bottom: 50px;
     color: #ffffff;
     text-align: center;
     font-size: 42px;

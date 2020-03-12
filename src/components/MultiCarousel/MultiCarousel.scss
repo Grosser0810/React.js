@@ -1,0 +1,27 @@
+.carouselBlock {
+
+}
+
+.carousel {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+
+  div {
+    transition: 0.2s ease;
+    width: 150px;
+    height: 150px;
+    background-size: 150px 150px;
+    box-shadow: 1px 1px 15px 2px rgba(0, 0, 0, .1);
+    border-radius: 50%;
+  }
+
+  div:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px 0 rgba(236, 64, 122, 1);
+  }
+  div:active {
+    box-shadow: 0 0 20px 0 rgba(236, 64, 122, 1) inset;
+  }
+
+}

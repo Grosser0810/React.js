@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gBAAiB;EACf,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,QAAQ;EACzB,MAAM,EAAE,IAAI;EAEZ,uBAAO;IACL,MAAM,EAAE,IAAI;IACZ,cAAc,EAAE,SAAS;IACzB,SAAS,EAAE,IAAI",
+"sources": ["NavigationBlock.scss"],
+"names": [],
+"file": "NavigationBlock.css"
+}

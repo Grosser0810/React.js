@@ -1,0 +1,44 @@
+.upright {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  left: -200px;
+  top: 224px;
+  text-transform: uppercase;
+  font-size: 16px; }
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 65px; }
+  .container .firstSectionTitle {
+    line-height: 0.9;
+    z-index: 2;
+    position: absolute;
+    left: -250px;
+    top: 40px;
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase; }
+  .container .img {
+    margin-top: 50px;
+    width: 800px;
+    height: 300px;
+    background: #e0e0e0;
+    position: relative;
+    margin-right: 50px; }
+  .container .firstSectionFooter {
+    font-weight: 300;
+    position: absolute;
+    left: -250px;
+    bottom: 40px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    line-height: 1; }
+
+/*# sourceMappingURL=FirstSection.css.map */

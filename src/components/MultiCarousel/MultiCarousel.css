@@ -1,0 +1,18 @@
+.carousel {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto; }
+  .carousel div {
+    transition: 0.2s ease;
+    width: 150px;
+    height: 150px;
+    background-size: 150px 150px;
+    box-shadow: 1px 1px 15px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 50%; }
+  .carousel div:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px 0 #ec407a; }
+  .carousel div:active {
+    box-shadow: 0 0 20px 0 #ec407a inset; }
+
+/*# sourceMappingURL=MultiCarousel.css.map */
