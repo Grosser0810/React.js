@@ -1,8 +1,8 @@
 import React from "react";
-import './FeedbackForm.css'
+import './FeedbackFormModal.css'
 import CloseIcon from '@material-ui/icons/Close';
 
-class FeedbackForm extends React.Component{
+class FeedbackFormModal extends React.Component{
     constructor(props) {
         super(props);
 
@@ -12,7 +12,7 @@ class FeedbackForm extends React.Component{
 
         return(
             <div className='feedbackModal'>
-                <CloseIcon onClick={this.props.handlerModal}/>
+                <CloseIcon onClick={this.props.handlerModalForm}/>
                 <div className='form'>
                     <span className='feedbackTitle'>Обратная связь</span>
                     <form action="">
@@ -43,4 +43,4 @@ class FeedbackForm extends React.Component{
 
 }
 
-export default FeedbackForm;
+export default FeedbackFormModal;

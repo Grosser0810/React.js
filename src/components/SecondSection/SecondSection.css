@@ -1,3 +1,64 @@
-
+.secondSection {
+  position: relative;
+  background: #1b1b1b; }
+  .secondSection .upright {
+    color: white;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -200px;
+    top: 240px;
+    text-transform: uppercase;
+    font-size: 16px; }
+  .secondSection .navigationBlock {
+    color: #ffffff;
+    margin-bottom: 50px; }
+  .secondSection .flex {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 70px;
+    height: 65%;
+    width: 870px;
+    background: #f0f0f0; }
+    .secondSection .flex .left span,
+    .secondSection .flex .right span {
+      display: block;
+      font-size: 34px;
+      font-weight: 900; }
+    .secondSection .flex .left p,
+    .secondSection .flex .right p {
+      font-size: 18px; }
+    .secondSection .flex .left {
+      border-right: 1px solid #1b1b1b;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+      width: 220px;
+      height: 200px; }
+      .secondSection .flex .left span,
+      .secondSection .flex .left p {
+        text-align: end; }
+    .secondSection .flex .right {
+      display: flex;
+      padding-left: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      width: 240px;
+      height: 200px; }
+  .secondSection .whiteCube {
+    font-size: 20px;
+    font-weight: 900;
+    height: 70%;
+    padding: 55px;
+    top: 50px;
+    right: -40px;
+    position: absolute;
+    width: 250px;
+    background: #ffffff; }
 
 /*# sourceMappingURL=SecondSection.css.map */

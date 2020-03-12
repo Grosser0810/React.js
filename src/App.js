@@ -1,8 +1,10 @@
 import React from 'react';
 import Footer from "./components/Footer/Footer";
-import FeedbackForm from './components/FeedbackFormModal/FeedbackForm'
+import FeedbackFormModal from './components/FeedbackFormModal/FeedbackFormModal'
 import FirstSection from "./components/FirstSection/FirstSection";
 import MultiCarousel from "./components/MultiCarousel/MultiCarousel";
+import MenuModal from "./components/MenuModal/MenuModal";
+import SecondSection from "./components/SecondSection/SecondSection";
 
 
 class App extends React.Component {
@@ -10,24 +12,29 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            hiddenModal: false,
+            handlerModalForm: false,
+            handlerModalMenu: false,
         }
     }
 
+    handlerModalForm = () => {
+        this.setState({handlerModalForm: !this.state.handlerModalForm})
+    };
 
-    handlerModal = () => {
-        this.setState(()=>{
-            return {hiddenModal: !this.state.hiddenModal}
-        })
+    handlerModalMenu = () => {
+        this.setState({handlerModalMenu: !this.state.handlerModalMenu})
     };
 
     render() {
-        if(this.state.hiddenModal) return <FeedbackForm handlerModal={this.handlerModal}/>
+
+        if(this.state.handlerModalForm) return <FeedbackFormModal handlerModalForm={this.handlerModalForm}/>
+        if(this.state.handlerModalMenu) return <MenuModal handlerModalMenu={this.handlerModalMenu}/>
         return (
-            <div className="App">
-                <FirstSection/>
+            <div className="App" >
+                <FirstSection handlerModalMenu={this.handlerModalMenu}/>
+                <SecondSection handlerModalMenu={this.handlerModalMenu}/>
                 <MultiCarousel/>
-                <Footer handlerModal={this.handlerModal}/>
+                <Footer handlerModalForm={this.handlerModalForm}/>
             </div>
         )
     }

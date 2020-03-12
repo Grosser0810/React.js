@@ -1,0 +1,32 @@
+.modalMenuBlock {
+  height: 100vh;
+  background: #1b1b1b; }
+  .modalMenuBlock svg {
+    transition: 0.3s ease;
+    opacity: 0.5;
+    font-size: 50px;
+    position: absolute;
+    color: #ffffff;
+    right: 0;
+    top: 0; }
+  .modalMenuBlock svg:hover {
+    cursor: pointer;
+    opacity: 0.8; }
+  .modalMenuBlock .modalNav {
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column; }
+    .modalMenuBlock .modalNav li {
+      font-size: 32px;
+      line-height: 46px;
+      font-family: Montserrat, sans-serif;
+      color: white;
+      font-weight: 200;
+      list-style: none; }
+      .modalMenuBlock .modalNav li a {
+        text-decoration: none;
+        color: #fff; }
+    .modalMenuBlock .modalNav li:hover {
+      font-weight: 900; }
+
+/*# sourceMappingURL=MenuModal.css.map */

@@ -1,0 +1,39 @@
+.modalMenuBlock {
+  height: 100vh;
+  background: #1b1b1b ;
+  svg {
+    transition: 0.3s ease;
+    opacity: 0.5;
+    font-size: 50px;
+    position: absolute;
+    color: #ffffff;
+    right: 0;
+    top: 0;
+  }
+
+  svg:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  .modalNav {
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    li {
+      font-size: 32px;
+      line-height: 46px;
+      font-family: Montserrat, sans-serif;
+      color: white;
+      font-weight: 200;
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+    li:hover {
+      font-weight: 900;
+    }
+  }
+}

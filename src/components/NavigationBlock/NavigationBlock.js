@@ -1,5 +1,6 @@
 import React from "react";
 import './NavigationBlock.css';
+import MenuIcon from '@material-ui/icons/Menu';
 
 class NavigationBlock extends React.Component{
     constructor(props) {
@@ -11,8 +12,8 @@ class NavigationBlock extends React.Component{
 
         return(
             <div className='navigationBlock'>
-                <button>Оставить заявку</button>
-                <button>-</button>
+                <div>Оставить заявку</div>
+                <MenuIcon onClick={this.props.handlerModalMenu} />
             </div>
         )
     }

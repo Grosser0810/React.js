@@ -14,8 +14,7 @@ class FirstSection extends React.Component {
             <div className='firstSection'>
                 <div className='upright'>стратегия охват результат вовлечение коммуникация</div>
                 <div className='container'>
-
-                    <NavigationBlock/>
+                    <NavigationBlock handlerModalMenu={this.props.handlerModalMenu}/>
                     <div className='img'>
                         <div className='firstSectionTitle'>
                             <div>Oh what</div>
@@ -29,7 +28,6 @@ class FirstSection extends React.Component {
                             <p>социальных сетях</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         )

@@ -3,41 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="9dc2f8b1-a9dd-4667-818a-e2ce14e66a04" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 10.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 10.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 11.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 11.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 12.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 12.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 13.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 13.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 14.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 14.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 15.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 15.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 16.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 16.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 17.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 17.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 18.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 18.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 19.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 19.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 2.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 2.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 20.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 20.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 21.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 21.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 22.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 22.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 23.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 23.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 24.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 24.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 25.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 25.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 26.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 26.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 4.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 4.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 5.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 5.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 6.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 6.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 7.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 7.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 8.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm 8.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/.sass-cache/e293be30b386a80a576fbf0e71d40da0498bfcdb/FeedbackForm.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/FeedbackForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/FeedbackForm.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackForm.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/FeedbackForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeedbackForm/FeedbackForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackForm.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackFormModal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackForm.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackFormModal.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackFormModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeedbackFormModal/FeedbackFormModal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FirstSection/FirstSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FirstSection/FirstSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MultiCarousel/.sass-cache/968a6aaebfa3a7d48ef8730c322164308df82126/MultiCarousel.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MultiCarousel/.sass-cache/968a6aaebfa3a7d48ef8730c322164308df82126/MultiCarousel.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MultiCarousel/MultiCarousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MultiCarousel/MultiCarousel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MultiCarousel/MultiCarousel.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MultiCarousel/MultiCarousel.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MultiCarousel/MultiCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MultiCarousel/MultiCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MultiCarousel/MultiCarousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MultiCarousel/MultiCarousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavigationBlock/.sass-cache/9554e190f952aef123d1b18bc94094ca71057b8b/NavigationBlock.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavigationBlock/.sass-cache/9554e190f952aef123d1b18bc94094ca71057b8b/NavigationBlock.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavigationBlock/NavigationBlock.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavigationBlock/NavigationBlock.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavigationBlock/NavigationBlock.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavigationBlock/NavigationBlock.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavigationBlock/NavigationBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavigationBlock/NavigationBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavigationBlock/NavigationBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavigationBlock/NavigationBlock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SecondSection/.sass-cache/59b8b5bb309ce360ee68180fbb7e7412a080b193/SecondSection.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SecondSection/.sass-cache/59b8b5bb309ce360ee68180fbb7e7412a080b193/SecondSection.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SecondSection/SecondSection.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SecondSection/SecondSection.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SecondSection/SecondSection.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SecondSection/SecondSection.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SecondSection/SecondSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SecondSection/SecondSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SecondSection/SecondSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SecondSection/SecondSection.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +54,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -96,7 +83,7 @@
       <workItem from="1583742050517" duration="706000" />
       <workItem from="1583755525857" duration="8997000" />
       <workItem from="1583914131018" duration="18850000" />
-      <workItem from="1584001640807" duration="7495000" />
+      <workItem from="1584001640807" duration="15066000" />
     </task>
     <servers />
   </component>
@@ -104,6 +91,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="482" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584014872520">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state x="482" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.804@0.23.1440.804" timestamp="1584014872520" />
     <state x="458" y="176" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583914207354">
       <screen x="0" y="23" width="1440" height="798" />
     </state>

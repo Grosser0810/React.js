@@ -68,7 +68,7 @@ class MultiCarousel extends React.Component{
                     className='carousel'
                     responsive={responsive}
                     autoPlay={true}
-                    autoPlaySpeed={1000}
+                    autoPlaySpeed={10}
                     swipeable={true}
                     draggable={true}
                     arrows={false}

@@ -15,7 +15,7 @@ class Footer extends React.Component{
             <div className='footerBlock'>
                 <h2>Продвигайте бизнес рационально</h2>
                 <div>
-                    <button onClick={this.props.handlerModal}>Оставить заявку на звонок</button>
+                    <button onClick={this.props.handlerModalForm}>Оставить заявку на звонок</button>
                 </div>
                 <IconGroup/>
             </div>
