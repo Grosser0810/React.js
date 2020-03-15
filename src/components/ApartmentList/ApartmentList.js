@@ -4,8 +4,7 @@ import Apartment from "./Apartment/Apartment";
 
 class ApartmentList extends React.Component {
     getKey = (string) => {
-        let id = parseInt(string.match(/\d+/));
-        return id;
+        return parseInt(string.match(/\d+/));
     };
 
     render() {
@@ -13,7 +12,7 @@ class ApartmentList extends React.Component {
             <div>
                 <div className='container apartmentList'>
                     {
-                        this.props.apartments.length !== 0 ?
+                        this.props.apartments.length ?
                             this.props.apartments.map(apartment => (
                                 <Apartment
                                     apartment={apartment}

@@ -6,7 +6,7 @@ import SoloApartmentPage from './pages/SoloApartmentPage'
 import FavoritesPage from './pages/FavoritesPage'
 
 import {connect} from 'react-redux';
-import {addApartmentToStore} from "./actions/actions";
+import {addApartmentToStore, searchButton} from "./actions/actions";
 
 
 
@@ -47,13 +47,11 @@ class App extends React.Component {
 
     handleResponse(response) {
         let arrApartments = response.listings;
-        this.setState(() => {
-            return {
+        this.setState({
                 loadedApartment: arrApartments,
                 pageNumber: this.state.pageNumber + 1,
-            }
         });
-        this.props.addApartmentToStore(arrApartments)
+        this.props.searchButton(arrApartments)
     }
 
     onSearchPressed() {
@@ -69,19 +67,19 @@ class App extends React.Component {
             .then(response => response.json())
             .then(json => this.handleResponseMore(json.response))
             .catch(error =>
-                this.setState(() => {
-                    return {message: 'Что то пошло не так' + error}
+                this.setState({
+                   message: 'Что то пошло не так' + error
                 }))
     }
 
     handleResponseMore(response) {
         let arrApartments = response.listings;
-        this.setState(() => {
-            return {
+        this.setState(
+             {
                 pageNumber: this.state.pageNumber + 1,
                 loadedApartment: [...this.state.loadedApartment, ...arrApartments],
-            }
-        });
+            });
+
         this.props.addApartmentToStore(arrApartments)
     }
 
@@ -114,13 +112,13 @@ class App extends React.Component {
     };
 
     addApartmentsToFavorite = (apartment) => {
+        let exist = this.state.favoritesApartments.find(item => item.id === parseInt(apartment.lister_url.match(/\d+/)));
+        if (exist) {
+            alert('уже добавлен в избранное');
+            return this.state.favoritesApartments;
+        }
+
         this.setState(() => {
-            for (let i = 0; i < this.state.favoritesApartments.length; i++) {
-                if (this.state.favoritesApartments[i].id === parseInt(apartment.lister_url.match(/\d+/))) {
-                    alert('уже добавлен в избранное');
-                    return this.state.favoritesApartments;
-                }
-            }
             let arr = [];
             arr.push({
                 id: parseInt(apartment.lister_url.match(/\d+/)),
@@ -142,16 +140,14 @@ class App extends React.Component {
     };
 
     deleteTask = id => {
-        this.setState(() => {
-            let apartments = this.state.favoritesApartments;
-            let newApartments = apartments.filter(task => task.id !== id);
-            localStorage.setItem('favoriteLocal', JSON.stringify(newApartments));
-            return {favoritesApartments: newApartments}
-        })
+        let apartments = this.state.favoritesApartments;
+        let newApartments = apartments.filter(task => task.id !== id);
+        localStorage.setItem('favoriteLocal', JSON.stringify(newApartments));
+        this.setState( {favoritesApartments: newApartments})
     };
 
     render() {
-        
+
         return (
             <div className="App">
                 <BrowserRouter >
@@ -159,13 +155,12 @@ class App extends React.Component {
 
                     <Switch>
                         <Route exact path='/'
-                               render={(props) => <StartPage
+                               render={() => <StartPage
                                    onSearchPressed={this.onSearchPressed.bind(this)}
                                    onSearchChanged={this.onSearchChanged}
                                    searchString={this.state.searchString}
                                    apartments={this.props.apartments}
                                    onSearchPressedMore={this.onSearchPressedMore.bind(this)}
-                                   {...props}
                                />}
                         />
                         <Route path='/apartment/:id'
@@ -177,9 +172,8 @@ class App extends React.Component {
                                />}
                         />
                         <Route path='/favorite'
-                               render={(props) => <FavoritesPage
+                               render={() => <FavoritesPage
                                    favoritesApartments={this.state.favoritesApartments}
-                                   {...props}
                                />}
                         />
                     </Switch>
@@ -200,6 +194,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     addApartmentToStore: (apartments) =>
         dispatch(addApartmentToStore(apartments)),
+
+    searchButton: (apartments)  => {
+        dispatch(searchButton(apartments))
+    }
 
 });
 
