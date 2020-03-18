@@ -25,8 +25,8 @@ class SoloApartment extends React.Component {
     };
 
     render() {
-        const apartment = this.props.apartment;
-        const redirect = this.state.redirect;
+        const {apartment} = this.props;
+        const {redirect} = this.state;
 
         if(!apartment) {
             return <Redirect to='/'/>
