@@ -1,0 +1,13 @@
+.header-panel {
+    width: 100%;
+    background: #424242;
+    padding: 20px;
+}
+
+.flex {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

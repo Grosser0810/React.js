@@ -1,0 +1,62 @@
+.apartment{
+    margin: 0 auto;
+    width: 90%;
+}
+.apartment .title {
+    color: #2196f3;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 30px;
+}
+
+.apartment  td{
+    color: #212121;
+}
+
+.apartmentCard {
+    margin-top: 20px;
+    padding: 30px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2)
+}
+
+.apartmentCard .img img {
+    width: 100%;
+}
+
+.apartment div span {
+    color: #212121;
+}
+.description {
+    max-width: 300px;
+    color: #212121;
+}
+
+.addToFavorites,
+.deleteInFavorite {
+    margin:0 auto;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    color: whitesmoke;
+    font-size: 20px;
+}
+.addToFavorites {
+    background: #ffb300;
+}
+
+.deleteInFavorite {
+    background: #f4511e;
+}
+.soloButton {
+    margin-top: 30px;
+}
+.priceBlock {
+    text-align: center;
+    color: #212121;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.buttonBlock {
+    text-align: center;
+}

@@ -1,0 +1,45 @@
+* {
+    color: #fafafa;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    font-style: normal;
+}
+button {
+    outline: none;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2)
+}
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 90%;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1) inset;
+}
+
+.more {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.more button {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+    background: white;
+    color: #616161;
+    padding: 10px;
+    border: 1px solid #616161;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,14 @@
+.container .apartment{
+    margin: 0 auto;
+    color: #212121;
+}
+.apartmentList {
+    margin: 0 auto;
+}
+
+.empty {
+    padding: 30px;
+    color: #212121;
+    text-align: center;
+}
+
